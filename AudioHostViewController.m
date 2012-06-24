@@ -27,6 +27,10 @@
 - (void)viewDidLoad {
     
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:)name:UIDeviceOrientationDidChangeNotification object:nil];
+
+    
+    [self view].bounds = [UIScreen mainScreen].bounds; 
     
     
     
@@ -48,41 +52,43 @@
     
   //  if (IS_IPAD) {
 
+    
+    
     //define the "key" xylophone note rectangles
-    keyRects[0] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
-                             [UIScreen mainScreen].bounds.size.height * 0.0,//derive y
-                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
-                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+    keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
+                             [self view].bounds.size.width * 0.0,//derive y
+                             [self view].bounds.size.width * 1.0,//span across entire screen
+                             [self view].bounds.size.width * 0.16// 1/6th width of screen
                              );
     
-    keyRects[1] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
-                             [UIScreen mainScreen].bounds.size.height * 0.16,//derive y
-                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
-                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+    keyRects[1] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
+                             [self view].bounds.size.width * 0.16,//derive y
+                             [self view].bounds.size.width * 1.0,//span across entire screen
+                             [self view].bounds.size.width * 0.16// 1/6th width of screen
                              );
 
-    keyRects[2] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
-                             [UIScreen mainScreen].bounds.size.height * 0.32,//derive y
-                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
-                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+    keyRects[2] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
+                             [self view].bounds.size.width * 0.32,//derive y
+                             [self view].bounds.size.width * 1.0,//span across entire screen
+                             [self view].bounds.size.width * 0.16// 1/6th width of screen
                              );
     
-    keyRects[3] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
-                             [UIScreen mainScreen].bounds.size.height * 0.48,//derive y
-                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
-                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+    keyRects[3] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
+                             [self view].bounds.size.width * 0.48,//derive y
+                             [self view].bounds.size.width * 1.0,//span across entire screen
+                             [self view].bounds.size.width * 0.16// 1/6th width of screen
                              );
     
-    keyRects[4] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
-                             [UIScreen mainScreen].bounds.size.height * 0.64,//derive y
-                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
-                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+    keyRects[4] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
+                             [self view].bounds.size.width * 0.64,//derive y
+                             [self view].bounds.size.width * 1.0,//span across entire screen
+                             [self view].bounds.size.width * 0.16// 1/6th width of screen
                              );
     
-    keyRects[5] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
-                             [UIScreen mainScreen].bounds.size.height * 0.80,//derive y
-                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
-                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+    keyRects[5] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
+                             [self view].bounds.size.width * 0.80,//derive y
+                             [self view].bounds.size.width * 1.0,//span across entire screen
+                             [self view].bounds.size.width * 0.16// 1/6th width of screen
                              );
     
     
@@ -152,6 +158,47 @@
     
     //start the audio graph
     [mixerHost startAUGraph];
+}
+
+
+- (void) didRotate:(NSNotification *)notification
+
+{   
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    
+    
+    if (orientation == UIDeviceOrientationLandscapeLeft)
+    {
+        NSLog(@"UIDeviceOrientationLandscapeLeft!");
+        //your code here
+        
+    }
+    
+    if (orientation == UIDeviceOrientationLandscapeRight)
+    {
+        NSLog(@"UIDeviceOrientationLandscapeRight!");
+        //your code here
+        
+    }
+
+    
+    if (orientation == UIDeviceOrientationPortrait)
+    {
+        NSLog(@"UIDeviceOrientationPortrait!");
+        //your code here
+        
+    }
+
+    
+    if (orientation == UIDeviceOrientationPortraitUpsideDown)
+    {
+        NSLog(@"UIDeviceOrientationPortraitUpsideDown!");
+        //your code here
+        
+    }
+
+    
+    
 }
 
 - (void)viewDidUnload {

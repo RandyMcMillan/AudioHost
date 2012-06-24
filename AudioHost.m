@@ -77,37 +77,6 @@
     AudioHostViewController *audioHostView = [AudioHostViewController new];
     
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button addTarget:self
-               action:@selector(closeCleaverView:)
-     forControlEvents:UIControlEventTouchUpInside];
-    
-    [button setTitle:@"Close"
-            forState:UIControlStateNormal];
-    
-    button.autoresizingMask = ( UIViewAutoresizingFlexibleWidth |
-                               UIViewAutoresizingFlexibleLeftMargin |
-                               UIViewAutoresizingFlexibleRightMargin |
-                               UIViewAutoresizingFlexibleBottomMargin );
-    
-    
-    if (IS_IPAD)
-    {
-        int x = [UIScreen mainScreen].bounds.size.width * 0.885;
-        int y = [UIScreen mainScreen].bounds.size.height * 0.004;
-        button.frame = CGRectMake(x, y, 85.0, 35.0);
-    }
-    
-    else 
-    {
-        
-        int x = [UIScreen mainScreen].bounds.size.width * 0.775;
-        int y = [UIScreen mainScreen].bounds.size.height * 0.010;
-        button.frame = CGRectMake(x, y, 70.0, 35.0);
-    }
-
-    
-    
     //mvcAudioHost_.modalPresentationStyle = UIModalPresentationFullScreen;
     mvcAudioHost_.modalPresentationStyle = UIModalPresentationPageSheet;
     audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
