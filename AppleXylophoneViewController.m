@@ -7,6 +7,8 @@
 //
 
 #import "AppleXylophoneViewController.h"
+#import "Constants.h"
+
 
 
 @implementation AppleXylophoneViewController
@@ -23,16 +25,138 @@
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
+    
+    
+    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self
+               action:@selector(onDoneButtonPress:)
+     forControlEvents:UIControlEventTouchUpInside];
+    
+    [button setTitle:@"Close"
+            forState:UIControlStateNormal];
+    
+    button.autoresizingMask = ( UIViewAutoresizingFlexibleWidth |
+                               UIViewAutoresizingFlexibleLeftMargin |
+                               UIViewAutoresizingFlexibleRightMargin |
+                               UIViewAutoresizingFlexibleBottomMargin );
+    
+    
+   
+    
+  //  if (IS_IPAD) {
+
     //define the "key" xylophone note rectangles
-    keyRects[0] = CGRectMake(55, 347, 199, 42);
-    keyRects[1] = CGRectMake(55, 304, 199, 42);
-    keyRects[2] = CGRectMake(55, 258, 199, 44);
-    keyRects[3] = CGRectMake(55, 213, 199, 44);
-    keyRects[4] = CGRectMake(55, 166, 199, 44);
-    keyRects[5] = CGRectMake(55, 43, 199, 121);
+    keyRects[0] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
+                             [UIScreen mainScreen].bounds.size.height * 0.0,//derive y
+                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
+                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+                             );
+    
+
+    
+    keyRects[1] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
+                             [UIScreen mainScreen].bounds.size.height * 0.16,//derive y
+                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
+                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+                             );
+    keyRects[2] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
+                             [UIScreen mainScreen].bounds.size.height * 0.32,//derive y
+                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
+                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+                             );
+    keyRects[3] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
+                             [UIScreen mainScreen].bounds.size.height * 0.48,//derive y
+                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
+                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+                             );
+    keyRects[4] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
+                             [UIScreen mainScreen].bounds.size.height * 0.64,//derive y
+                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
+                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+                             );
+    keyRects[5] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
+                             [UIScreen mainScreen].bounds.size.height * 0.80,//derive y
+                             [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
+                             [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
+                             );
+    
+    
+#if TARGET_IPHONE_SIMULATOR
+    
+
+    UILabel *label0 = [ [UILabel alloc ] initWithFrame:keyRects[0] ];
+    label0.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
+    label0.text = [NSString stringWithFormat: @"keyRect[0]"];
+    
+    UILabel *label1 = [ [UILabel alloc ] initWithFrame:keyRects[1] ];
+    label1.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
+    label1.text = [NSString stringWithFormat: @"keyRect[1]"];
+
+    UILabel *label2 = [ [UILabel alloc ] initWithFrame:keyRects[2] ];
+    label2.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
+    label2.text = [NSString stringWithFormat: @"keyRect[2]"];
+
+    UILabel *label3 = [ [UILabel alloc ] initWithFrame:keyRects[3] ];
+    label3.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
+    label3.text = [NSString stringWithFormat: @"keyRect[3]"];
+
+    UILabel *label4 = [ [UILabel alloc ] initWithFrame:keyRects[4] ];
+    label4.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
+    label4.text = [NSString stringWithFormat: @"keyRect[4]"];
+
+    UILabel *label5 = [ [UILabel alloc ] initWithFrame:keyRects[5] ];
+    label5.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
+    label5.text = [NSString stringWithFormat: @"keyRect[5]"];
+
+    
+    
+    
+    [self.view addSubview:label0];
+    [self.view addSubview:label1];
+    [self.view addSubview:label2];
+    [self.view addSubview:label3];
+    [self.view addSubview:label4];
+    [self.view addSubview:label5];
+
+
+    
+#endif 
+    if (IS_IPAD) {
+        int x = [UIScreen mainScreen].bounds.size.width * 0.0;
+        int y = [UIScreen mainScreen].bounds.size.height * 0.004;
+        button.frame = CGRectMake(x, y, 85.0, 35.0);
+    }
+    
+    else {
         
+        int x = [UIScreen mainScreen].bounds.size.width * 0.775;
+        int y = [UIScreen mainScreen].bounds.size.height * 0.010;
+        button.frame = CGRectMake(x, y, 70.0, 35.0);
+        button.frame = keyRects[0];
+    }
+
+    [self.view addSubview:button]; 
+    
+    [super viewDidLoad];
+;
+
+   /* 
+    keyRects[1] = CGRectMake(55, 304, [UIScreen mainScreen].bounds.size.width * 1.0, 42);
+    keyRects[2] = CGRectMake(55, 258, [UIScreen mainScreen].bounds.size.width * 1.0, 44);
+    keyRects[3] = CGRectMake(55, 213, [UIScreen mainScreen].bounds.size.width * 1.0, 44);
+    keyRects[4] = CGRectMake(55, 166, [UIScreen mainScreen].bounds.size.width * 1.0, 44);
+    keyRects[5] = CGRectMake(55, 43,  [UIScreen mainScreen].bounds.size.width * 1.0, 121);
+    */
+    
+    //}
+    
+    //else {
+        //
+    //}
+    
     //create the mixer
     self.mixerHost = [[MixerHostAudio alloc] init];
     
