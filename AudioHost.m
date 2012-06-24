@@ -24,7 +24,7 @@
 #import "Constants.h"
 #import "AudioHost.h"
 #import "AudioHost_JS.h"
-#import "AppleXylophoneViewController.h"
+#import "AudioHostViewController.h"
 
 
 @implementation AudioHost
@@ -75,7 +75,7 @@
 
     CDVViewController* mvcAudioHost_ = (CDVViewController*)[ super viewController ];
     //[mvcAudioHost_.view autoresizesSubviews];
-    AppleXylophoneViewController *audioHostView = [AppleXylophoneViewController new];
+    AudioHostViewController *audioHostView = [AudioHostViewController new];
     //audioHostView.view.bounds = mvcAudioHost_.view.bounds;
     //[mvcAudioHost_.view addSubview:audioHostView.view];
     

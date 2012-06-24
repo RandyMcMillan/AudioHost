@@ -11,7 +11,7 @@
 
 #define KEY_COUNT 6
 
-@interface AppleXylophoneViewController : UIViewController {
+@interface AudioHostViewController : UIViewController {
     int                 lastKeyIndex;
     CGRect              keyRects[KEY_COUNT];
     IBOutlet UIButton* doneButton;
