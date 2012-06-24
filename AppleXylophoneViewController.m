@@ -12,6 +12,8 @@
 @implementation AppleXylophoneViewController
 
 @synthesize mixerHost;
+@synthesize supportedOrientations;
+
 
 - (void)dealloc {
     [super dealloc];
@@ -103,5 +105,44 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
+
+
+-(IBAction) onDoneButtonPress:(id)sender {
+    
+    NSLog(@"Done Button Press");
+    
+    if ([self respondsToSelector:@selector(presentingViewController)]) { 
+        //Reference UIViewController.h Line:179 for update to iOS 5 difference - @RandyMcMillan
+        [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [[self parentViewController] dismissModalViewControllerAnimated:YES];
+    }
+
+//    [ self closeBrowser];
+    
+  //  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]];
+    //[webView loadRequest:request];
+}
+
+
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    
+    BOOL autoRotate = [self.supportedOrientations count] > 1; // autorotate if only more than 1 orientation supported
+    if (autoRotate)
+    {
+        if ([self.supportedOrientations containsObject:
+             [NSNumber numberWithInt:interfaceOrientation]]) {
+            return YES;
+        }
+    }
+    
+//    return NO;
+
+    // Return YES for supported orientations
+    return [super shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+}
+
 
 @end

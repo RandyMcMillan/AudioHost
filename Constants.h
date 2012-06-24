@@ -1,3 +1,5 @@
+
+
 /*
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
@@ -17,16 +19,16 @@
  under the License.
  */
 
+//
+//  Constants.h
+//  AudioHostDevProject
+//
+//  Created by Randy McMillan on 6/24/12.
+//  Copyright (c) 2012 OpenOSX.org. All rights reserved.
+//
 
-#import "AudioHost_JS.h"
+#ifndef AudioHostDevProject_Constants_h
+#define AudioHostDevProject_Constants_h
+#endif
 
-@implementation AudioHost_JS
-
-///Remove line breaks/returns to use as one constant string!
-
-NSString * const kAudioHost_INIT = @"console.log('AudioHost Cordova Plugin is initialized.')";
-
-
-//NSString * const kAudioHost_ALERT = @"navigator.notification.alert('Cordova  AudioHost Plugin is working!')";
-NSString * const kAudioHost_ALERT = @"";
-@end
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)

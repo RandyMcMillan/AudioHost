@@ -21,9 +21,11 @@
 #import <Cordova/CDVAvailability.h>
 #import <Cordova/CDVViewController.h>
 #import <Cordova/CDVDebug.h>
-
+#import "Constants.h"
 #import "AudioHost.h"
 #import "AudioHost_JS.h"
+#import "AppleXylophoneViewController.h"
+
 
 @implementation AudioHost
 
@@ -72,6 +74,48 @@
     NSLog(@"kAudioHost_ALERT = %@",kAudioHost_ALERT);
 
     CDVViewController* mvcAudioHost_ = (CDVViewController*)[ super viewController ];
+    //[mvcAudioHost_.view autoresizesSubviews];
+    AppleXylophoneViewController *audioHostView = [AppleXylophoneViewController new];
+    //audioHostView.view.bounds = mvcAudioHost_.view.bounds;
+    //[mvcAudioHost_.view addSubview:audioHostView.view];
+    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self
+               action:@selector(closeCleaverView:)
+     forControlEvents:UIControlEventTouchUpInside];
+    
+    [button setTitle:@"Close"
+            forState:UIControlStateNormal];
+    
+    button.autoresizingMask = ( UIViewAutoresizingFlexibleWidth |
+                               UIViewAutoresizingFlexibleLeftMargin |
+                               UIViewAutoresizingFlexibleRightMargin |
+                               UIViewAutoresizingFlexibleBottomMargin );
+    
+    
+    if (IS_IPAD)
+    {
+        int x = [UIScreen mainScreen].bounds.size.width * 0.885;
+        int y = [UIScreen mainScreen].bounds.size.height * 0.004;
+        button.frame = CGRectMake(x, y, 85.0, 35.0);
+    }
+    
+    else 
+    {
+        
+        int x = [UIScreen mainScreen].bounds.size.width * 0.775;
+        int y = [UIScreen mainScreen].bounds.size.height * 0.010;
+        button.frame = CGRectMake(x, y, 70.0, 35.0);
+    }
+
+    
+    
+    mvcAudioHost_.modalPresentationStyle = UIModalPresentationFullScreen;
+    //mvcAudioHost_.modalPresentationStyle = UIModalPresentationPageSheet;
+    audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
+    [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
+    
     NSLog(@"mvcAudioHost_ = %@",mvcAudioHost_);
     NSLog(@"mvcAudioHost_.view = %@",mvcAudioHost_.view);
     NSLog(@"mvcAudioHost_.webView = %@",mvcAudioHost_.webView);

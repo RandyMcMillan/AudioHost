@@ -13,13 +13,18 @@
 
 @interface AppleXylophoneViewController : UIViewController {
     int                 lastKeyIndex;
-    CGRect              keyRects[KEY_COUNT]; 
+    CGRect              keyRects[KEY_COUNT];
+    IBOutlet UIButton* doneButton;
     
 }
 
 @property (nonatomic, assign) MixerHostAudio *mixerHost;
+@property (nonatomic, retain) NSArray* supportedOrientations;
 
 - (int)keyIndexForTouch:(UITouch *)touch;
 - (IBAction) mixerOutputGainChanged: (UISlider *) sender;
+- (IBAction)onDoneButtonPress:(id)sender;
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation;
 
 @end
