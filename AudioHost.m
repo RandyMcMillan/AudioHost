@@ -74,10 +74,7 @@
     NSLog(@"kAudioHost_ALERT = %@",kAudioHost_ALERT);
 
     CDVViewController* mvcAudioHost_ = (CDVViewController*)[ super viewController ];
-    //[mvcAudioHost_.view autoresizesSubviews];
     AudioHostViewController *audioHostView = [AudioHostViewController new];
-    //audioHostView.view.bounds = mvcAudioHost_.view.bounds;
-    //[mvcAudioHost_.view addSubview:audioHostView.view];
     
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -111,9 +108,10 @@
 
     
     
-    mvcAudioHost_.modalPresentationStyle = UIModalPresentationFullScreen;
-    //mvcAudioHost_.modalPresentationStyle = UIModalPresentationPageSheet;
+    //mvcAudioHost_.modalPresentationStyle = UIModalPresentationFullScreen;
+    mvcAudioHost_.modalPresentationStyle = UIModalPresentationPageSheet;
     audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
+    audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
     [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
     
     NSLog(@"mvcAudioHost_ = %@",mvcAudioHost_);

@@ -252,10 +252,8 @@
         }
     }
     
-//    return NO;
+    return NO;
 
-    // Return YES for supported orientations
-    return [super shouldAutorotateToInterfaceOrientation:interfaceOrientation];
 }
 
 
