@@ -55,28 +55,30 @@
                              [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
                              );
     
-
-    
     keyRects[1] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
                              [UIScreen mainScreen].bounds.size.height * 0.16,//derive y
                              [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
                              [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
                              );
+
     keyRects[2] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
                              [UIScreen mainScreen].bounds.size.height * 0.32,//derive y
                              [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
                              [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
                              );
+    
     keyRects[3] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
                              [UIScreen mainScreen].bounds.size.height * 0.48,//derive y
                              [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
                              [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
                              );
+    
     keyRects[4] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
                              [UIScreen mainScreen].bounds.size.height * 0.64,//derive y
                              [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
                              [UIScreen mainScreen].bounds.size.height * 0.16// 1/6th heigth of screen
                              );
+    
     keyRects[5] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0,//derive x
                              [UIScreen mainScreen].bounds.size.height * 0.80,//derive y
                              [UIScreen mainScreen].bounds.size.width * 1.0,//span across entire screen
@@ -85,7 +87,7 @@
     
     
 #if TARGET_IPHONE_SIMULATOR
-    
+   //For your convience in configuring keyRects 
 
     UILabel *label0 = [ [UILabel alloc ] initWithFrame:keyRects[0] ];
     label0.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
@@ -123,22 +125,10 @@
 
 
     
-#endif 
-    if (IS_IPAD) {
-        int x = [UIScreen mainScreen].bounds.size.width * 0.0;
-        int y = [UIScreen mainScreen].bounds.size.height * 0.004;
-        button.frame = CGRectMake(x, y, 85.0, 35.0);
-    }
+#endif
     
-    else {
-        
-        int x = [UIScreen mainScreen].bounds.size.width * 0.775;
-        int y = [UIScreen mainScreen].bounds.size.height * 0.010;
-        button.frame = CGRectMake(x, y, 70.0, 35.0);
-        button.frame = keyRects[0];
-    }
-
-    [self.view addSubview:button]; 
+    
+ 
     
     [super viewDidLoad];
 ;
