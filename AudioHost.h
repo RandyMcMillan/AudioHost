@@ -17,10 +17,12 @@
  under the License.
  */
 
-//http://git-wip-us.apache.org/repos/asf?p=incubator-cordova-ios.git;a=blob;f=CordovaLib/Classes/CDVPlugin.h;h=658cfbd4bf65adff4a4a38413714c7fb4ae7d075;hb=HEAD
 //
-//http://git-wip-us.apache.org/repos/asf?p=incubator-cordova-ios.git;a=blob;f=CordovaLib/Classes/CDVPlugin.m;h=2ebf4ef786033e12fea63d1fc160760d42bf59cf;hb=HEAD
 //
+//  Created by Randy McMillan on 6/24/12.
+//  Copyright OpenOSX.org 2012. All rights reserved.
+//
+
 #import <Foundation/Foundation.h>
 
 #import <Cordova/CDVPlugin.h>

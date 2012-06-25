@@ -17,6 +17,13 @@
  under the License.
  */
 
+//
+//
+//  Created by Randy McMillan on 6/24/12.
+//  Copyright OpenOSX.org 2012. All rights reserved.
+//
+
+
 (function() {
  
  var cordovaRef = window.PhoneGap || window.Cordova || window.cordova; // old to new fallbacks
