@@ -32,3 +32,6 @@
 #endif
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define  kXOrientationAdjust  0
+#define  kYOrientationAdjust  100
+
