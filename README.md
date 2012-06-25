@@ -10,9 +10,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     AudioHost Cordova (iOS) plugin
     Map hotspots to trigger audio events.
     
-    more info and documentation to come.
+    This is wtill a work in progress but if functional.
+    More info and documentation to come.
     
-    -RM
+    @RandyMcMillan
 
 ![image](https://github.com/RandyMcMillan/AudioHost/raw/master/keyValues.png)
 
