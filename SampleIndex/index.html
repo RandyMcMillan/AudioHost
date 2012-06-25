@@ -29,16 +29,46 @@
                  for more details -jm */
                 function onDeviceReady() {}
                 
+                function buttonZero (returnSuccess){
+                    
+                    window.plugins.AudioHost.callLoadHostView(nativePluginResultHandler,nativePluginErrorHandler,"0");
+                    
+                }
+                
                 function buttonOne (returnSuccess){
                     
-                    window.plugins.AudioHost.callNativeFunction(nativePluginResultHandler,nativePluginErrorHandler,returnSuccess);
+                    window.plugins.AudioHost.callLoadHostView(nativePluginResultHandler,nativePluginErrorHandler,"1");
                     
                 }
+                
                 function buttonTwo (returnSuccess){
                     
-                    window.plugins.AudioHost.callNativeFunction(nativePluginResultHandler,nativePluginErrorHandler,returnSuccess);
+                    window.plugins.AudioHost.callLoadHostView(nativePluginResultHandler,nativePluginErrorHandler,"2");
                     
                 }
+                function buttonThree (returnSuccess){
+                    
+                    window.plugins.AudioHost.callLoadHostView(nativePluginResultHandler,nativePluginErrorHandler,"3");
+                    
+                }
+                function buttonFour (returnSuccess){
+                    
+                    window.plugins.AudioHost.callLoadHostView(nativePluginResultHandler,nativePluginErrorHandler,"4");
+                    
+                }
+                function buttonFive (returnSuccess){
+                    
+                    window.plugins.AudioHost.callLoadHostView(nativePluginResultHandler,nativePluginErrorHandler,"5");
+                    
+                }
+                
+                
+                function allElseFail (returnSuccess){
+                    
+                    window.plugins.AudioHost.callLoadHostView(nativePluginResultHandler,nativePluginErrorHandler,"100");
+                    
+                }
+                
                 
                 function nativePluginResultHandler (result) {}
                 function nativePluginErrorHandler (error) {}
@@ -48,10 +78,16 @@
             </head>
     <body onload="onBodyLoad()">
         <h1>Hey, it's Cordova!</h1>
-        
-        <button onclick="buttonOne('success');">Click to invoke the AudioHost_Plugin with an SUCCESS!</button>
-        <button onclick="buttonTwo('error');">Click to invoke the AudioHost_Plugin with an ERROR!</button>
-        
+        <center>
+            <button onclick="buttonZero('success');">AudioHostVC0!</button>
+            <button onclick="buttonOne('success');">AudioiHostVC1!</button>
+            <button onclick="buttonTwo('success');">AudioiHostVC2!</button><br>
+            <button onclick="buttonThree('success');">AudioiHostVC3!</button>
+            <button onclick="buttonFour('success');">AudioiHostVC4!</button>
+            <button onclick="buttonFive('success');">AudioiHostVC5!</button><br>
+            <br>
+            <button onclick="allElseFail('success');">All Else Fail!!</button>
+        </center>
     </body>
 </html>
 
