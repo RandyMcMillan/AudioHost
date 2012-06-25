@@ -2,12 +2,33 @@
 
 
 ##AudioHost Cordova (iOS) plugin
-    Map hotspots to trigger audio events.
-    
-    This is still a work in progress but is functional.
-    More development, info and documentation to come.
-    
-    @RandyMcMillan
+###Map hotspots to trigger audio events.
+
+
+Plugin KeyValues AudioHost AudioHost<br><br>
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/keyValues.png)
+<br><br><br>
+
+###Cordova WebView.
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPadCDVLandscape.png)
+###Display a view that has hotspots mapped to audio files.
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPadLandscape.png)
+###Cordova WebView.
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPadCDVPortrait.png)
+###Display a view that has hotspots mapped to audio files.
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPadPortrait.png)
+
+###iPhone and iPad support
+####Hotspots resize on orientation changes
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPhonePortrait.png)
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPhoneLandscape.png)
+
+###Multiple view support. Each view can be mapped individually.
+        keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0,//derive xi
+                                     [self view].bounds.size.height * 0.0,//derive y
+                                     [self view].bounds.size.width * 1.0,//span across entire screen
+                                     [self view].bounds.size.height * 0.16// 1/6th width of screen
+                                     );
 
 Reference:
 
@@ -58,8 +79,4 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  
  
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/keyValues.png)
 
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/portrait.png)
-
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/landscape.png)

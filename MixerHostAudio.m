@@ -150,7 +150,7 @@ static OSStatus inputRenderCallback (
     
     if (audioSessionError != nil) {
         
-        NSLog (@"Error setting audio session category.");
+        //NSLog (@"Error setting audio session category.");
         return;
     }
     
@@ -162,7 +162,7 @@ static OSStatus inputRenderCallback (
     
     if (audioSessionError != nil) {
         
-        NSLog (@"Error setting preferred hardware sample rate.");
+        //NSLog (@"Error setting preferred hardware sample rate.");
         return;
     }
     
@@ -172,7 +172,7 @@ static OSStatus inputRenderCallback (
     
     if (audioSessionError != nil) {
         
-        NSLog (@"Error activating audio session during initial setup.");
+        //NSLog (@"Error activating audio session during initial setup.");
         return;
     }
     
@@ -211,8 +211,8 @@ static OSStatus inputRenderCallback (
     monoStreamFormat.mBitsPerChannel    = 8 * bytesPerSample;
     monoStreamFormat.mSampleRate        = graphSampleRate;
     
-    NSLog (@"The mono stream format for the \"beats\" mixer input bus:");
-    [self printASBD: monoStreamFormat];
+    //NSLog (@"The mono stream format for the \"beats\" mixer input bus:");
+    //[self printASBD: monoStreamFormat];
     
 }
 
@@ -224,7 +224,7 @@ static OSStatus inputRenderCallback (
     
     for (int audioFile = 0; audioFile < FILE_COUNT; ++audioFile)  {
         
-        NSLog (@"readAudioFilesIntoMemory - file %i", audioFile);
+        //NSLog (@"readAudioFilesIntoMemory - file %i", audioFile);
         
         // Instantiate an extended audio file object.
         ExtAudioFileRef audioFileObject = 0;
@@ -232,7 +232,10 @@ static OSStatus inputRenderCallback (
         // Open an audio file and associate it with the extended audio file object.
         OSStatus result = ExtAudioFileOpenURL (sourceURLArray[audioFile], &audioFileObject);
         
-        if (noErr != result || NULL == audioFileObject) {[self printErrorMessage: @"ExtAudioFileOpenURL" withStatus: result]; return;}
+        if (noErr != result || NULL == audioFileObject) {
+        //    [self printErrorMessage: @"ExtAudioFileOpenURL" withStatus: result]; 
+            return;
+        }
         
         // Get the audio file's length in frames.
         UInt64 totalFramesInFile = 0;
@@ -245,7 +248,9 @@ static OSStatus inputRenderCallback (
                                              &totalFramesInFile
                                              );
         
-        if (noErr != result) {[self printErrorMessage: @"ExtAudioFileGetProperty (audio file length in frames)" withStatus: result]; return;}
+        if (noErr != result) {
+            //[self printErrorMessage: @"ExtAudioFileGetProperty (audio file length in frames)" withStatus: result];
+            return;}
         
         // Assign the frame count to the soundStructArray instance variable
         fileStructArray[audioFile].frameCount = totalFramesInFile;
@@ -261,7 +266,9 @@ static OSStatus inputRenderCallback (
                                              &fileAudioFormat
                                              );
         
-        if (noErr != result) {[self printErrorMessage: @"ExtAudioFileGetProperty (file audio format)" withStatus: result]; return;}
+        if (noErr != result) {
+            //[self printErrorMessage: @"ExtAudioFileGetProperty (file audio format)" withStatus: result];
+            return;}
         
         UInt32 channelCount = fileAudioFormat.mChannelsPerFrame;
         
@@ -273,7 +280,7 @@ static OSStatus inputRenderCallback (
         if (1 == channelCount) {           
             importFormat = monoStreamFormat;            
         } else {        
-            NSLog (@"*** WARNING: File format not supported - wrong number of channels");
+            //NSLog (@"*** WARNING: File format not supported - wrong number of channels");
             ExtAudioFileDispose (audioFileObject);
             return;
         }
@@ -290,7 +297,9 @@ static OSStatus inputRenderCallback (
                                              &importFormat
                                              );
         
-        if (noErr != result) {[self printErrorMessage: @"ExtAudioFileSetProperty (client data format)" withStatus: result]; return;}
+        if (noErr != result) {
+            //[self printErrorMessage: @"ExtAudioFileSetProperty (client data format)" withStatus: result]; 
+            return;}
         
         // Set up an AudioBufferList struct, which has two roles:
         //
@@ -309,7 +318,9 @@ static OSStatus inputRenderCallback (
                                                  sizeof (AudioBufferList) + sizeof (AudioBuffer) * (channelCount - 1)
                                                  );
         
-        if (NULL == bufferList) {NSLog (@"*** malloc failure for allocating bufferList memory"); return;}
+        if (NULL == bufferList) {
+            //NSLog (@"*** malloc failure for allocating bufferList memory");
+            return;}
         
         // initialize the mNumberBuffers member
         bufferList->mNumberBuffers = channelCount;
@@ -340,7 +351,7 @@ static OSStatus inputRenderCallback (
         
         if (noErr != result) {
             
-            [self printErrorMessage: @"ExtAudioFileRead failure - " withStatus: result];
+            //[self printErrorMessage: @"ExtAudioFileRead failure - " withStatus: result];
             
             // If reading from the file failed, then free the memory for the sound buffer.
             free (fileStructArray[audioFile].audioData);
@@ -349,7 +360,7 @@ static OSStatus inputRenderCallback (
             return;
         }
         
-        NSLog (@"Finished reading file %i into memory", audioFile);
+        //NSLog (@"Finished reading file %i into memory", audioFile);
         
         // Dispose of the extended audio file object, which also
         //    closes the associated file.
@@ -373,14 +384,16 @@ static OSStatus inputRenderCallback (
 
 - (void) configureAndInitializeAudioProcessingGraph {
     
-    NSLog (@"Configuring and then initializing audio processing graph");
+    //NSLog (@"Configuring and then initializing audio processing graph");
     OSStatus result = noErr;
     
     //............................................................................
     // Create a new audio processing graph.
     result = NewAUGraph (&processingGraph);
     
-    if (noErr != result) {[self printErrorMessage: @"NewAUGraph" withStatus: result]; return;}
+    if (noErr != result) {
+        //[self printErrorMessage: @"NewAUGraph" withStatus: result]; 
+        return;}
     
     
     //............................................................................
@@ -406,7 +419,7 @@ static OSStatus inputRenderCallback (
     
     //............................................................................
     // Add nodes to the audio processing graph.
-    NSLog (@"Adding nodes to audio processing graph");
+    //NSLog (@"Adding nodes to audio processing graph");
     
     AUNode   iONode;         // node for I/O unit
     AUNode   mixerNode;      // node for Multichannel Mixer unit
@@ -417,7 +430,9 @@ static OSStatus inputRenderCallback (
                                 &iOUnitDescription,
                                 &iONode);
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphNewNode failed for I/O unit" withStatus: result]; return;}
+    if (noErr != result) {
+        //[self printErrorMessage: @"AUGraphNewNode failed for I/O unit" withStatus: result]; 
+        return;}
     
     
     result =    AUGraphAddNode (
@@ -426,7 +441,9 @@ static OSStatus inputRenderCallback (
                                 &mixerNode
                                 );
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphNewNode failed for Mixer unit" withStatus: result]; return;}
+    if (noErr != result) {
+        //[self printErrorMessage: @"AUGraphNewNode failed for Mixer unit" withStatus: result]; 
+        return;}
     
     
     //............................................................................
@@ -437,7 +454,9 @@ static OSStatus inputRenderCallback (
     //    process audio).
     result = AUGraphOpen (processingGraph);
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphOpen" withStatus: result]; return;}
+    if (noErr != result) {
+        //[self printErrorMessage: @"AUGraphOpen" withStatus: result];
+        return;}
     
     
     //............................................................................
@@ -450,7 +469,9 @@ static OSStatus inputRenderCallback (
                                  &mixerUnit
                                  );
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphNodeInfo" withStatus: result]; return;}
+    if (noErr != result) {
+        //[self printErrorMessage: @"AUGraphNodeInfo" withStatus: result];
+        return;}
     
     
     //............................................................................
@@ -458,7 +479,7 @@ static OSStatus inputRenderCallback (
     
     UInt32 busCount   = BUS_COUNT;    // bus count for mixer unit input
     
-    NSLog (@"Setting mixer unit input bus count to: %lu", busCount);
+    //NSLog (@"Setting mixer unit input bus count to: %lu", busCount);
     result = AudioUnitSetProperty (
                                    mixerUnit,
                                    kAudioUnitProperty_ElementCount,
@@ -468,10 +489,12 @@ static OSStatus inputRenderCallback (
                                    sizeof (busCount)
                                    );
     
-    if (noErr != result) {[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit bus count)" withStatus: result]; return;}
+    if (noErr != result) {
+        //[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit bus count)" withStatus: result];
+        return;}
     
     
-    NSLog (@"Setting kAudioUnitProperty_MaximumFramesPerSlice for mixer unit global scope");
+    //NSLog (@"Setting kAudioUnitProperty_MaximumFramesPerSlice for mixer unit global scope");
     // Increase the maximum frames per slice allows the mixer unit to accommodate the
     //    larger slice size used when the screen is locked.
     UInt32 maximumFramesPerSlice = 4096;
@@ -485,7 +508,9 @@ static OSStatus inputRenderCallback (
                                    sizeof (maximumFramesPerSlice)
                                    );
     
-    if (noErr != result) {[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit input stream format)" withStatus: result]; return;}
+    if (noErr != result) {
+        //[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit input stream format)" withStatus: result];
+        return;}
     
     
     // Attach the input render callback and context to each input bus
@@ -496,7 +521,7 @@ static OSStatus inputRenderCallback (
         inputCallbackStruct.inputProc        = &inputRenderCallback;
         inputCallbackStruct.inputProcRefCon  = soundStructArray;
         
-        NSLog (@"Registering the render callback with mixer unit input bus %u", busNumber);
+        //NSLog (@"Registering the render callback with mixer unit input bus %u", busNumber);
         // Set a callback for the specified node's specified input
         result = AUGraphSetNodeInputCallback (
                                               processingGraph,
@@ -505,9 +530,11 @@ static OSStatus inputRenderCallback (
                                               &inputCallbackStruct
                                               );
         
-        if (noErr != result) {[self printErrorMessage: @"AUGraphSetNodeInputCallback" withStatus: result]; return;}
+        if (noErr != result) {
+            //[self printErrorMessage: @"AUGraphSetNodeInputCallback" withStatus: result];
+            return;}
         
-        NSLog (@"Setting mono stream format for mixer unit %u input bus",busNumber);
+        //NSLog (@"Setting mono stream format for mixer unit %u input bus",busNumber);
         result = AudioUnitSetProperty (
                                        mixerUnit,
                                        kAudioUnitProperty_StreamFormat,
@@ -517,10 +544,12 @@ static OSStatus inputRenderCallback (
                                        sizeof (monoStreamFormat)
                                        );
         
-        if (noErr != result) {[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit input bus stream format)" withStatus: result];return;}
+        if (noErr != result) {
+            //[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit input bus stream format)" withStatus: result];
+            return;}
     }
     
-    NSLog (@"Setting sample rate for mixer unit output scope");
+    //NSLog (@"Setting sample rate for mixer unit output scope");
     // Set the mixer unit's output sample rate format. This is the only aspect of the output stream
     //    format that must be explicitly set.
     result = AudioUnitSetProperty (
@@ -532,12 +561,14 @@ static OSStatus inputRenderCallback (
                                    sizeof (graphSampleRate)
                                    );
     
-    if (noErr != result) {[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit output stream format)" withStatus: result]; return;}
+    if (noErr != result) {
+        //[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit output stream format)" withStatus: result];
+        return;}
     
     
     //............................................................................
     // Connect the nodes of the audio processing graph
-    NSLog (@"Connecting the mixer output to the input of the I/O unit output element");
+    //NSLog (@"Connecting the mixer output to the input of the I/O unit output element");
     
     result = AUGraphConnectNodeInput (
                                       processingGraph,
@@ -547,7 +578,9 @@ static OSStatus inputRenderCallback (
                                       0                  // desintation node input bus number
                                       );
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphConnectNodeInput" withStatus: result]; return;}
+    if (noErr != result) {
+    //    [self printErrorMessage: @"AUGraphConnectNodeInput" withStatus: result]; return;
+    }
     
     
     //............................................................................
@@ -556,15 +589,17 @@ static OSStatus inputRenderCallback (
     // Diagnostic code
     // Call CAShow if you want to look at the state of the audio processing 
     //    graph.
-    NSLog (@"Audio processing graph state immediately before initializing it:");
+    //NSLog (@"Audio processing graph state immediately before initializing it:");
     CAShow (processingGraph);
     
-    NSLog (@"Initializing the audio processing graph");
+    //NSLog (@"Initializing the audio processing graph");
     // Initialize the audio processing graph, configure audio data stream formats for
     //    each input and output, and validate the connections between audio units.
     result = AUGraphInitialize (processingGraph);
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphInitialize" withStatus: result]; return;}
+    if (noErr != result) {
+    //    [self printErrorMessage: @"AUGraphInitialize" withStatus: result]; return;
+    }
 }
 
 
@@ -574,9 +609,11 @@ static OSStatus inputRenderCallback (
 // Start playback
 - (void) startAUGraph  {
     
-    NSLog (@"Starting audio processing graph");
+    //NSLog (@"Starting audio processing graph");
     OSStatus result = AUGraphStart (processingGraph);
-    if (noErr != result) {[self printErrorMessage: @"AUGraphStart" withStatus: result]; return;}
+    if (noErr != result) {
+    //    [self printErrorMessage: @"AUGraphStart" withStatus: result]; return;
+    }
     
     self.playing = YES;
 }
@@ -584,15 +621,19 @@ static OSStatus inputRenderCallback (
 // Stop playback
 - (void) stopAUGraph {
     
-    NSLog (@"Stopping audio processing graph");
+    //NSLog (@"Stopping audio processing graph");
     Boolean isRunning = false;
     OSStatus result = AUGraphIsRunning (processingGraph, &isRunning);
-    if (noErr != result) {[self printErrorMessage: @"AUGraphIsRunning" withStatus: result]; return;}
+    if (noErr != result) {
+        //[self printErrorMessage: @"AUGraphIsRunning" withStatus: result];
+        return;}
     
     if (isRunning) {
         
         result = AUGraphStop (processingGraph);
-        if (noErr != result) {[self printErrorMessage: @"AUGraphStop" withStatus: result]; return;}
+        if (noErr != result) {
+        //    [self printErrorMessage: @"AUGraphStop" withStatus: result]; return;
+        }
         self.playing = NO;
     }
 }
@@ -631,7 +672,9 @@ static OSStatus inputRenderCallback (
                                              0
                                              );
     
-    if (noErr != result) {[self printErrorMessage: @"AudioUnitSetParameter (set mixer unit output volume)" withStatus: result]; return;}
+    if (noErr != result) {
+        //[self printErrorMessage: @"AudioUnitSetParameter (set mixer unit output volume)" withStatus: result];
+        return;}
     
 }
 
@@ -644,7 +687,7 @@ static OSStatus inputRenderCallback (
 //    whether playback was in progress at the time of the interruption.
 - (void) beginInterruption {
     
-    NSLog (@"Audio session was interrupted.");
+    //NSLog (@"Audio session was interrupted.");
     
     if (playing) {
         
@@ -669,12 +712,12 @@ static OSStatus inputRenderCallback (
                                              error: &endInterruptionError];
         if (endInterruptionError != nil) {
             
-            NSLog (@"Unable to reactivate the audio session after the interruption ended.");
+            //NSLog (@"Unable to reactivate the audio session after the interruption ended.");
             return;
             
         } else {
             
-            NSLog (@"Audio session reactivated after interruption.");
+            //NSLog (@"Audio session reactivated after interruption.");
             
             if (interruptedDuringPlayback) {
                 
@@ -703,14 +746,14 @@ static OSStatus inputRenderCallback (
     bcopy (&formatID, formatIDString, 4);
     formatIDString[4] = '\0';
     
-    NSLog (@"  Sample Rate:         %10.0f",  asbd.mSampleRate);
-    NSLog (@"  Format ID:           %10s",    formatIDString);
-    NSLog (@"  Format Flags:        %10lu",    asbd.mFormatFlags);
-    NSLog (@"  Bytes per Packet:    %10lu",    asbd.mBytesPerPacket);
-    NSLog (@"  Frames per Packet:   %10lu",    asbd.mFramesPerPacket);
-    NSLog (@"  Bytes per Frame:     %10lu",    asbd.mBytesPerFrame);
-    NSLog (@"  Channels per Frame:  %10lu",    asbd.mChannelsPerFrame);
-    NSLog (@"  Bits per Channel:    %10lu",    asbd.mBitsPerChannel);
+    //NSLog (@"  Sample Rate:         %10.0f",  asbd.mSampleRate);
+    //NSLog (@"  Format ID:           %10s",    formatIDString);
+    //NSLog (@"  Format Flags:        %10lu",    asbd.mFormatFlags);
+    //NSLog (@"  Bytes per Packet:    %10lu",    asbd.mBytesPerPacket);
+    //NSLog (@"  Frames per Packet:   %10lu",    asbd.mFramesPerPacket);
+    //NSLog (@"  Bytes per Frame:     %10lu",    asbd.mBytesPerFrame);
+    //NSLog (@"  Channels per Frame:  %10lu",    asbd.mChannelsPerFrame);
+    //NSLog (@"  Bits per Channel:    %10lu",    asbd.mBitsPerChannel);
 }
 
 - (void) printErrorMessage: (NSString *) errorString withStatus: (OSStatus) result {
@@ -720,11 +763,13 @@ static OSStatus inputRenderCallback (
     bcopy (&swappedResult, resultString, 4);
     resultString[4] = '\0';
     
+    /*
     NSLog (
            @"*** %@ error: %%d%08X %4.4s\n",
            errorString,
            (char*) &resultString
            );
+     */
 }
 
 
