@@ -18,6 +18,10 @@
 
 ![image](https://github.com/RandyMcMillan/AudioHost/raw/master/keyValues.png)
 
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/portrait.png)
+
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/landscape.png)
+
 
     AudioHost Cordova (iOS) plugin
     Map hotspots to trigger audio events.
