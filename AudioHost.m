@@ -75,6 +75,7 @@
 
     CDVViewController* mvcAudioHost_ = (CDVViewController*)[ super viewController ];
     AudioHostViewController *audioHostView = [AudioHostViewController new];
+    audioHostView.view.bounds = mvcAudioHost_.view.bounds;
     
     if (IS_IPAD) {
 
@@ -89,6 +90,11 @@
         
     audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
     audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
+    mvcAudioHost_.view.autoresizesSubviews = YES;
+
+    
+    [audioHostView drawKeyRects];//prime dimensions for first draw
+
     [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
     
     NSLog(@"mvcAudioHost_ = %@",mvcAudioHost_);

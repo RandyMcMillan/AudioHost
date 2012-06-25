@@ -302,8 +302,9 @@
 
 - (void)viewDidLoad {
     
-    self.view.bounds = [UIScreen mainScreen].bounds;
     
+    if (IS_IPAD) {} else {}
+   
     [self drawKeyRects];
     
     
@@ -313,7 +314,7 @@
     
     
     
-    
+   /* 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button addTarget:self
                action:@selector(onDoneButtonPress:)
@@ -327,206 +328,11 @@
                                UIViewAutoresizingFlexibleRightMargin |
                                UIViewAutoresizingFlexibleBottomMargin );
     
-   
-  /*  
-    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-    
-    
-    
-    if ((orientation = UIDeviceOrientationLandscapeLeft | UIDeviceOrientationLandscapeRight)) {
-        NSLog(@"UIDeviceOrientationLandscapeLeft!");
-        
-        //define the "key" xylophone note rectangles
-        keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0,//derive xi
-                                 [self view].bounds.size.width * 0.0,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-        
-        keyRects[1] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
-                                 [self view].bounds.size.width * 0.16,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-        
-        keyRects[2] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
-                                 [self view].bounds.size.width * 0.32,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-        
-        keyRects[3] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
-                                 [self view].bounds.size.width * 0.48,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-        
-        keyRects[4] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
-                                 [self view].bounds.size.width * 0.64,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-        
-        keyRects[5] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
-                                 [self view].bounds.size.width * 0.80,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-
-        
-        
-    }
-    
-    
-    
-    if ((orientation = UIDeviceOrientationPortrait | UIDeviceOrientationPortraitUpsideDown)) {
-        NSLog(@"UIDeviceOrientationPortrait!");
-        
-        //define the "key" xylophone note rectangles
-        keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0 + kXOrientationAdjust,//derive x
-                                 [self view].bounds.size.width * 0.0 + kYOrientationAdjust,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-        
-        keyRects[1] = CGRectMake([self view].bounds.size.width * 0.0 + kXOrientationAdjust,//derive x
-                                 [self view].bounds.size.width * 0.16 + kYOrientationAdjust,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-        
-        keyRects[2] = CGRectMake([self view].bounds.size.width * 0.0 + kXOrientationAdjust,//derive x
-                                 [self view].bounds.size.width * 0.32 + kYOrientationAdjust,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-        
-        keyRects[3] = CGRectMake([self view].bounds.size.width * 0.0 + kXOrientationAdjust,//derive x
-                                 [self view].bounds.size.width * 0.48 + kYOrientationAdjust,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-        
-        keyRects[4] = CGRectMake([self view].bounds.size.width * 0.0 + kXOrientationAdjust,//derive x
-                                 [self view].bounds.size.width * 0.64 + kYOrientationAdjust,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-        
-        keyRects[5] = CGRectMake([self view].bounds.size.width * 0.0 + kXOrientationAdjust,//derive x
-                                 [self view].bounds.size.width * 0.80 + kYOrientationAdjust,//derive y
-                                 [self view].bounds.size.width * 1.0,//span across entire screen
-                                 [self view].bounds.size.width * 0.16// 1/6th width of screen
-                                 );
-
-        
-        
-    }
-    
-    //define the "key" xylophone note rectangles
-    keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-                             [self view].bounds.size.width * 0.0 + yOrientationAdjust,//derive y
-                             [self view].bounds.size.width * 1.0,//span across entire screen
-                             [self view].bounds.size.width * 0.16// 1/6th width of screen
-                             );
-    
-    keyRects[1] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-                             [self view].bounds.size.width * 0.16 + yOrientationAdjust,//derive y
-                             [self view].bounds.size.width * 1.0,//span across entire screen
-                             [self view].bounds.size.width * 0.16// 1/6th width of screen
-                             );
-
-    keyRects[2] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-                             [self view].bounds.size.width * 0.32 + yOrientationAdjust,//derive y
-                             [self view].bounds.size.width * 1.0,//span across entire screen
-                             [self view].bounds.size.width * 0.16// 1/6th width of screen
-                             );
-    
-    keyRects[3] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-                             [self view].bounds.size.width * 0.48 + yOrientationAdjust,//derive y
-                             [self view].bounds.size.width * 1.0,//span across entire screen
-                             [self view].bounds.size.width * 0.16// 1/6th width of screen
-                             );
-    
-    keyRects[4] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-                             [self view].bounds.size.width * 0.64 + yOrientationAdjust,//derive y
-                             [self view].bounds.size.width * 1.0,//span across entire screen
-                             [self view].bounds.size.width * 0.16// 1/6th width of screen
-                             );
-    
-    keyRects[5] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-                             [self view].bounds.size.width * 0.80 + yOrientationAdjust,//derive y
-                             [self view].bounds.size.width * 1.0,//span across entire screen
-                             [self view].bounds.size.width * 0.16// 1/6th width of screen
-                             );
-    
-    
-
-*/
-
-
-/*
-#if TARGET_IPHONE_SIMULATOR
-   //For your convience in configuring keyRects 
-
-    UILabel *label0 = [ [UILabel alloc ] initWithFrame:keyRects[0] ];
-    label0.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
-    label0.text = [NSString stringWithFormat: @"keyRect[0]"];
-    
-    UILabel *label1 = [ [UILabel alloc ] initWithFrame:keyRects[1] ];
-    label1.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
-    label1.text = [NSString stringWithFormat: @"keyRect[1]"];
-
-    UILabel *label2 = [ [UILabel alloc ] initWithFrame:keyRects[2] ];
-    label2.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
-    label2.text = [NSString stringWithFormat: @"keyRect[2]"];
-
-    UILabel *label3 = [ [UILabel alloc ] initWithFrame:keyRects[3] ];
-    label3.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
-    label3.text = [NSString stringWithFormat: @"keyRect[3]"];
-
-    UILabel *label4 = [ [UILabel alloc ] initWithFrame:keyRects[4] ];
-    label4.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
-    label4.text = [NSString stringWithFormat: @"keyRect[4]"];
-
-    UILabel *label5 = [ [UILabel alloc ] initWithFrame:keyRects[5] ];
-    label5.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
-    label5.text = [NSString stringWithFormat: @"keyRect[5]"];
-
-    
-    
-    
-    [self.view addSubview:label0];
-    [self.view addSubview:label1];
-    [self.view addSubview:label2];
-    [self.view addSubview:label3];
-    [self.view addSubview:label4];
-    [self.view addSubview:label5];
-
-
-    
-#endif
-    
-    
- */
-    
-    [super viewDidLoad];
-;
-
-   /* 
-    keyRects[1] = CGRectMake(55, 304, [UIScreen mainScreen].bounds.size.width * 1.0, 42);
-    keyRects[2] = CGRectMake(55, 258, [UIScreen mainScreen].bounds.size.width * 1.0, 44);
-    keyRects[3] = CGRectMake(55, 213, [UIScreen mainScreen].bounds.size.width * 1.0, 44);
-    keyRects[4] = CGRectMake(55, 166, [UIScreen mainScreen].bounds.size.width * 1.0, 44);
-    keyRects[5] = CGRectMake(55, 43,  [UIScreen mainScreen].bounds.size.width * 1.0, 121);
     */
     
-    //}
     
-    //else {
-        //
-    //}
-    
+    [super viewDidLoad];
+
     //create the mixer
     self.mixerHost = [[MixerHostAudio alloc] init];
     

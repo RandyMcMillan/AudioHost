@@ -33,4 +33,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation;
 
+- (void)drawKeyRects;
+
 @end
