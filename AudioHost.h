@@ -28,5 +28,6 @@
 
 - (void) init:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 - (void) nativeFunction:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void) loadHostView:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 
 @end
