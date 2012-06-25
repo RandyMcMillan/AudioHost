@@ -156,7 +156,7 @@
         [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
     }
     else {
-    
+        NSLog(@"\n ***** All else failed! AudioHost.m Line: 159 ***** \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ***** All else failed! AudioHost.m Line: 159 ***** \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ***** All else failed! AudioHost.m Line: 159 ***** "); 
         AudioHostViewController *audioHostView = [AudioHostViewController new];
         audioHostView.view.bounds = mvcAudioHost_.view.bounds;
         audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
