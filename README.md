@@ -17,5 +17,12 @@
  
 
 
-    ___PROJECTNAME___Plugin Template
+    AudioHost Cordova (iOS) plugin
+    Map hotspots to trigger audio events.
+    
+    more info to come.
+    
+    -RM
+    
+    
 
