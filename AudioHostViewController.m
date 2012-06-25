@@ -286,8 +286,6 @@
     label5.text = [NSString stringWithFormat: @"keyRect[5]"];
 
 
-
-
     [self.view addSubview:label0];
     [self.view addSubview:label1];
     [self.view addSubview:label2];
