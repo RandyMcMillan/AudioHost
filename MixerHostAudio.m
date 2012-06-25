@@ -36,7 +36,7 @@
 //
 //    Declared as AURenderCallback in AudioUnit/AUComponent.h. See Audio Unit Component Services Reference.
 static OSStatus inputRenderCallback (
-                                     
+
                                      void                        *inRefCon,      // A pointer to a struct containing the complete audio data 
                                      //    to play, as well as state information such as the  
                                      //    first sample to play on this invocation of the callback.

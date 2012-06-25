@@ -68,59 +68,47 @@
     keyRects[4] = CGRectZero;
     keyRects[5] = CGRectZero;
 
-
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
 
-
     if (IS_IPAD) {
-        //
 
         if (orientation > 2) {
             NSLog(@"UIDeviceOrientationLandscapeLeft!");
-
             //define the "key" xylophone note rectangles
             keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0,//derive xi
                                      [self view].bounds.size.height * 0.0,//derive y
                                      [self view].bounds.size.width * 1.0,//span across entire screen
                                      [self view].bounds.size.height * 0.16// 1/6th width of screen
                                      );
-
             keyRects[1] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
                                      [self view].bounds.size.height * 0.16,//derive y
                                      [self view].bounds.size.width * 1.0,//span across entire screen
                                      [self view].bounds.size.height * 0.16// 1/6th width of screen
                                      );
-
             keyRects[2] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
                                      [self view].bounds.size.height * 0.32,//derive y
                                      [self view].bounds.size.width * 1.0,//span across entire screen
                                      [self view].bounds.size.height * 0.16// 1/6th width of screen
                                      );
-
             keyRects[3] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
                                      [self view].bounds.size.height * 0.48,//derive y
                                      [self view].bounds.size.width * 1.0,//span across entire screen
                                      [self view].bounds.size.height * 0.16// 1/6th width of screen
                                      );
-
             keyRects[4] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
                                      [self view].bounds.size.height * 0.64,//derive y
                                      [self view].bounds.size.width * 1.0,//span across entire screen
                                      [self view].bounds.size.height * 0.16// 1/6th width of screen
                                      );
-
             keyRects[5] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
                                      [self view].bounds.size.height * 0.80,//derive y
                                      [self view].bounds.size.width * 1.0,//span across entire screen
                                      [self view].bounds.size.height * 0.16// 1/6th width of screen
                                      );
         }
-
         else
-
         {
             NSLog(@"UIDeviceOrientationPortrait!");
-
             //define the "key" xylophone note rectangles
             keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0,//derive x
                                      [self view].bounds.size.height * 0.0 + kYOrientationAdjustiPad,//derive y
@@ -158,7 +146,6 @@
     {
         if (orientation > 2) {
             NSLog(@"UIDeviceOrientationLandscapeLeft!");
-            
             //define the "key" xylophone note rectangles
             keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0 + kXOrientationAdjustiPhone,//derive xi
                                      [self view].bounds.size.height * 0.0,//derive y
@@ -228,80 +215,34 @@
 
         } //End IS_IPHONE
 
-
-
-
     }
-
-    /* 
-     //define the "key" xylophone note rectangles
-     keyRects[0] = CGRectMake([UIScreen mainScreen].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-     [self view].bounds.size.width * 0.0 + yOrientationAdjust,//derive y
-     [self view].bounds.size.width * 1.0,//span across entire screen
-     [self view].bounds.size.width * 0.16// 1/6th width of screen
-     );
-     
-     keyRects[1] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-     [self view].bounds.size.width * 0.16 + yOrientationAdjust,//derive y
-     [self view].bounds.size.width * 1.0,//span across entire screen
-     [self view].bounds.size.width * 0.16// 1/6th width of screen
-     );
-     
-     keyRects[2] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-     [self view].bounds.size.width * 0.32 + yOrientationAdjust,//derive y
-     [self view].bounds.size.width * 1.0,//span across entire screen
-     [self view].bounds.size.width * 0.16// 1/6th width of screen
-     );
-     
-     keyRects[3] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-     [self view].bounds.size.width * 0.48 + yOrientationAdjust,//derive y
-     [self view].bounds.size.width * 1.0,//span across entire screen
-     [self view].bounds.size.width * 0.16// 1/6th width of screen
-     );
-     
-     keyRects[4] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-     [self view].bounds.size.width * 0.64 + yOrientationAdjust,//derive y
-     [self view].bounds.size.width * 1.0,//span across entire screen
-     [self view].bounds.size.width * 0.16// 1/6th width of screen
-     );
-     
-     keyRects[5] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
-     [self view].bounds.size.width * 0.80 + yOrientationAdjust,//derive y
-     [self view].bounds.size.width * 1.0,//span across entire screen
-     [self view].bounds.size.width * 0.16// 1/6th width of screen
-     );
- 
- 
- 
-     */
-
 
 
 #if TARGET_IPHONE_SIMULATOR
-    
+
     //For your convience in configuring keyRects. Pink Transparencies only displayed in Simulator 
-    
+
     UILabel *label0 = [ [UILabel alloc ] initWithFrame:keyRects[0] ];
     label0.numberOfLines = 3;
     label0.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
     label0.text = [NSString stringWithFormat: @"keyRect[0]\nOnly displayed in Simulator"];
-    
+
     UILabel *label1 = [ [UILabel alloc ] initWithFrame:keyRects[1] ];
     label1.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
     label1.text = [NSString stringWithFormat: @"keyRect[1]"];
-    
+
     UILabel *label2 = [ [UILabel alloc ] initWithFrame:keyRects[2] ];
     label2.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
     label2.text = [NSString stringWithFormat: @"keyRect[2]"];
-    
+
     UILabel *label3 = [ [UILabel alloc ] initWithFrame:keyRects[3] ];
     label3.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
     label3.text = [NSString stringWithFormat: @"keyRect[3]"];
-    
+
     UILabel *label4 = [ [UILabel alloc ] initWithFrame:keyRects[4] ];
     label4.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
     label4.text = [NSString stringWithFormat: @"keyRect[4]"];
-    
+
     UILabel *label5 = [ [UILabel alloc ] initWithFrame:keyRects[5] ];
     label5.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
     label5.text = [NSString stringWithFormat: @"keyRect[5]"];
@@ -314,94 +255,43 @@
     [self.view addSubview:label4];
     [self.view addSubview:label5];
 
-
-
 #endif
 
 
 }
 
 - (void)viewDidLoad {
-    
-    
-    if (IS_IPAD) {} else {}
-   
-    [self drawKeyRects];
-    
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(didRotate:)name:UIDeviceOrientationDidChangeNotification object:nil];
 
-    
-    
-    
-   /* 
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button addTarget:self
-               action:@selector(onDoneButtonPress:)
-     forControlEvents:UIControlEventTouchUpInside];
-    
-    [button setTitle:@"Close"
-            forState:UIControlStateNormal];
-    
-    button.autoresizingMask = ( UIViewAutoresizingFlexibleWidth |
-                               UIViewAutoresizingFlexibleLeftMargin |
-                               UIViewAutoresizingFlexibleRightMargin |
-                               UIViewAutoresizingFlexibleBottomMargin );
-    
-    */
-    
-    
-    [super viewDidLoad];
+    [self drawKeyRects];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                          selector:@selector(didRotate:)
+                                          name:UIDeviceOrientationDidChangeNotification object:nil];
+
 
     //create the mixer
     self.mixerHost = [[MixerHostAudio alloc] init];
-    
     //start the audio graph
     [mixerHost startAUGraph];
+
+    [super viewDidLoad];
+
 }
 
 
 - (void) didRotate:(NSNotification *)notification {
 
     [self drawKeyRects];
-    
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
  
-    if (orientation == UIDeviceOrientationLandscapeLeft) {
-        NSLog(@"UIDeviceOrientationLandscapeLeft!");
-        //your code here
-        
-    }
-    
-    if (orientation == UIDeviceOrientationLandscapeRight) {
-        NSLog(@"UIDeviceOrientationLandscapeRight!");
-        //your code here
-        
-    }
+    if (orientation == UIDeviceOrientationLandscapeLeft) {}
+    if (orientation == UIDeviceOrientationLandscapeRight) {}
+    if (orientation == UIDeviceOrientationPortrait) {}
+    if (orientation == UIDeviceOrientationPortraitUpsideDown) {}
 
-    
-    if (orientation == UIDeviceOrientationPortrait) {
-        NSLog(@"UIDeviceOrientationPortrait!");
-        //your code here
-        
-    }
-
-    
-    if (orientation == UIDeviceOrientationPortraitUpsideDown) {
-        NSLog(@"UIDeviceOrientationPortraitUpsideDown!");
-        //your code here
-        
-    }
-
-    
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
+- (void)viewDidUnload { [super viewDidUnload]; }
 
 // Handle a change in the mixer output gain slider.
 - (IBAction) mixerOutputGainChanged: (UISlider *) sender {
@@ -414,12 +304,12 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *aTouch = [touches anyObject];
     int idx = [self keyIndexForTouch:aTouch];
-    
+
     if (idx >= 0) {
         if ([mixerHost playNote:idx] == YES) {
             lastKeyIndex = idx;
         }
-    }    
+    }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -434,7 +324,7 @@
         if ([mixerHost playNote:idx] == YES) {
             lastKeyIndex = idx;
         }
-    } 
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -444,7 +334,7 @@
 - (int)keyIndexForTouch:(UITouch *)touch {
     int keyIndex = -1;
     CGPoint pt = [touch locationInView:self.view];
-    
+
     for (int i=0; i<KEY_COUNT; i++) {
         CGRect rect = keyRects[i];
         if (CGRectContainsPoint(rect, pt)) {
@@ -452,7 +342,7 @@
             break;
         }
     }
-    
+
     return keyIndex;
 }
 
@@ -465,27 +355,20 @@
 
 
 -(IBAction) onDoneButtonPress:(id)sender {
-    
+
     NSLog(@"Done Button Press");
-    
+
     if ([self respondsToSelector:@selector(presentingViewController)]) { 
-        //Reference UIViewController.h Line:179 for update to iOS 5 difference - @RandyMcMillan
         [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
     } else {
         [[self parentViewController] dismissModalViewControllerAnimated:YES];
     }
 
-//    [ self closeBrowser];
-    
-  //  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]];
-    //[webView loadRequest:request];
 }
-
-
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    
+
     BOOL autoRotate = [self.supportedOrientations count] > 1; // autorotate if only more than 1 orientation supported
     if (autoRotate)
     {
@@ -494,10 +377,9 @@
             return YES;
         }
     }
-    
+
     return NO;
 
 }
-
 
 @end

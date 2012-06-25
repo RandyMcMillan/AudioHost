@@ -24,8 +24,6 @@
 //
 
 
-
-
 #import <Foundation/Foundation.h>
 
 @interface AudioHost_JS : NSObject {}
@@ -35,4 +33,3 @@ extern NSString * const kAudioHost_INIT;
 extern NSString * const kAudioHost_ALERT;
 
 @end
-

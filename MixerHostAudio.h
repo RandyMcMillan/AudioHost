@@ -10,8 +10,8 @@ Abstract: Audio object: Handles all audio tasks for the application.
 #import <AVFoundation/AVFoundation.h>
 
 #define FILE_COUNT  6
-#define BUS_COUNT   18  //Reduce this to low number to see how available busses affects playing multiple notes simultaneously.                    
-                      
+#define BUS_COUNT   18  //Reduce this to low number to see how available busses affects playing multiple notes simultaneously.
+
 // Data structure that defines a single audio file, related to a given tone
 typedef struct {
     AudioUnitSampleType *audioData;         // the complete left (or mono) channel of audio data read from an audio file
@@ -67,5 +67,3 @@ typedef struct {
 - (void) printErrorMessage: (NSString *) errorString withStatus: (OSStatus) result;
 
 @end
-
-

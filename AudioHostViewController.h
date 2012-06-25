@@ -27,7 +27,6 @@
 //  Copyright 2011 DOCKMARKET LLC. All rights reserved.
 //
 
-
 #ifdef CORDOVA_FRAMEWORK
 #import <Cordova/CDVPlugin.h>
 #else
@@ -42,7 +41,7 @@
     int                 lastKeyIndex;
     CGRect              keyRects[KEY_COUNT];
     IBOutlet UIButton* doneButton;
-    
+
 }
 
 @property (nonatomic, assign) MixerHostAudio *mixerHost;
@@ -51,9 +50,7 @@
 - (int)keyIndexForTouch:(UITouch *)touch;
 - (IBAction) mixerOutputGainChanged: (UISlider *) sender;
 - (IBAction)onDoneButtonPress:(id)sender;
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation;
-
 - (void)drawKeyRects;
 
 @end

@@ -63,8 +63,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ![image](https://github.com/RandyMcMillan/AudioHost/raw/master/portrait.png)
 
 ![image](https://github.com/RandyMcMillan/AudioHost/raw/master/landscape.png)
-
-
-    
-    
-

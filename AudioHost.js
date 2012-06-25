@@ -75,17 +75,3 @@
  
  })();
 
-
-/*
- var AudioHost = {
- 
- callNativeFunction: function (success, fail, resultType) {
- return cordova.exec(success, fail, "AudioHost", "nativeFunction", [resultType]);
- }
- }
- */
-
-
-
-
-

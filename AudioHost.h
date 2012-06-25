@@ -16,22 +16,17 @@
  specific language governing permissions and limitations
  under the License.
  */
-
-//
 //
 //  Created by Randy McMillan on 6/24/12.
 //  Copyright OpenOSX.org 2012. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
 #import <Cordova/CDVPlugin.h>
-
 
 @interface AudioHost : CDVPlugin {}
 
 - (void) init:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 - (void) nativeFunction:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
-
 
 @end

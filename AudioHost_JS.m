@@ -23,17 +23,10 @@
 //  Copyright OpenOSX.org 2012. All rights reserved.
 //
 
-
-
 #import "AudioHost_JS.h"
 
 @implementation AudioHost_JS
-
 ///Remove line breaks/returns to use as one constant string!
-
-NSString * const kAudioHost_INIT = @"console.log('AudioHost Cordova Plugin is initialized.')";
-
-
-//NSString * const kAudioHost_ALERT = @"navigator.notification.alert('Cordova  AudioHost Plugin is working!')";
+NSString * const kAudioHost_INIT = @"";
 NSString * const kAudioHost_ALERT = @"";
 @end

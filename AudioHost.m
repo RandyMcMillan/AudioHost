@@ -23,8 +23,6 @@
 //  Copyright OpenOSX.org 2012. All rights reserved.
 //
 
-
-
 #import <Cordova/CDVAvailability.h>
 #import <Cordova/CDVViewController.h>
 #import <Cordova/CDVDebug.h>
@@ -33,12 +31,9 @@
 #import "AudioHost_JS.h"
 #import "AudioHostViewController.h"
 
-
 @implementation AudioHost
 
 - (void) init:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {
-
-//    NSLog(@"AudioHost.m LINE:32 - %@", kAudioHost_INIT);
 
     NSString *callbackId = [arguments pop];
     //NSString *objectAtIndex0 = [arguments objectAtIndex:0];
@@ -75,35 +70,33 @@
     NSLog(@"objectAtIndex0 = '%@'",objectAtIndex0);
 
 /*
-        NSString *objectAtIndex1 = [arguments objectAtIndex:1];
-        NSLog(@"objectAtIndex1 = '%@'",objectAtIndex1);
+    NSString *objectAtIndex1 = [arguments objectAtIndex:1];
+    NSLog(@"objectAtIndex1 = '%@'",objectAtIndex1);
 */
     NSLog(@"kAudioHost_ALERT = %@",kAudioHost_ALERT);
 
     CDVViewController* mvcAudioHost_ = (CDVViewController*)[ super viewController ];
     AudioHostViewController *audioHostView = [AudioHostViewController new];
     audioHostView.view.bounds = mvcAudioHost_.view.bounds;
-    
+
     if (IS_IPAD) {
 
     mvcAudioHost_.modalPresentationStyle = UIModalPresentationPageSheet;
-        
+
     } else {
-        //
+//
     mvcAudioHost_.modalPresentationStyle = UIModalPresentationFullScreen;
  
     }
 
-        
     audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
     audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
     mvcAudioHost_.view.autoresizesSubviews = YES;
 
-    
     [audioHostView drawKeyRects];//prime dimensions for first draw
 
     [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
-    
+
     NSLog(@"mvcAudioHost_ = %@",mvcAudioHost_);
     NSLog(@"mvcAudioHost_.view = %@",mvcAudioHost_.view);
     NSLog(@"mvcAudioHost_.webView = %@",mvcAudioHost_.webView);
