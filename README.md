@@ -10,18 +10,18 @@ Plugin KeyValues AudioHost AudioHost<br><br>
 <br><br><br>
 
 ###Cordova WebView.
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPadCDVLandscape.png)
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPadCDVLandscape.png)
 ###Display a view that has hotspots mapped to audio files.
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPadLandscape.png)
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPadLandscape.png)
 ###Cordova WebView.
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPadCDVPortrait.png)
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPadCDVPortrait.png)
 ###Display a view that has hotspots mapped to audio files.
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPadPortrait.png)
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPadPortrait.png)
 
 ###iPhone and iPad support
 ####Hotspots resize on orientation changes
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPhonePortrait.png)
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/iPhoneLandscape.png)
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPhonePortrait.png)
+![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPhoneLandscape.png)
 
 ###Multiple view support. Each view can be mapped individually.
         keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0,//derive xi
