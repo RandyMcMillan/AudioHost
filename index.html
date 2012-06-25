@@ -12,8 +12,8 @@
              <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />
              -->
             <!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
-            <script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
-            <script type="text/javascript" charset="utf-8" src="___PROJECTNAME___Plugin.js"></script>
+            <script type="text/javascript" charset="utf-8" src="cordova-1.8.1.js"></script>
+            <script type="text/javascript" charset="utf-8" src="AudioHost_Plugin.js"></script>
             
             <script type="text/javascript">
                 
@@ -31,12 +31,12 @@
                 
                 function buttonOne (returnSuccess){
                     
-                    window.plugins.___PROJECTNAME___Plugin.callNativeFunction(nativePluginResultHandler,nativePluginErrorHandler,returnSuccess);
+                    window.plugins.AudioHost.callNativeFunction(nativePluginResultHandler,nativePluginErrorHandler,returnSuccess);
                     
                 }
                 function buttonTwo (returnSuccess){
                     
-                    window.plugins.___PROJECTNAME___Plugin.callNativeFunction(nativePluginResultHandler,nativePluginErrorHandler,returnSuccess);
+                    window.plugins.AudioHost.callNativeFunction(nativePluginResultHandler,nativePluginErrorHandler,returnSuccess);
                     
                 }
                 
@@ -49,8 +49,8 @@
     <body onload="onBodyLoad()">
         <h1>Hey, it's Cordova!</h1>
         
-        <button onclick="buttonOne('success');">Click to invoke the ___PROJECTNAME___Plugin with an SUCCESS!</button>
-        <button onclick="buttonTwo('error');">Click to invoke the ___PROJECTNAME___Plugin with an ERROR!</button>
+        <button onclick="buttonOne('success');">Click to invoke the AudioHost_Plugin with an SUCCESS!</button>
+        <button onclick="buttonTwo('error');">Click to invoke the AudioHost_Plugin with an ERROR!</button>
         
     </body>
 </html>

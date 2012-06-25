@@ -18,65 +18,65 @@
  */
 
 (function() {
-
-var cordovaRef = window.PhoneGap || window.Cordova || window.cordova; // old to new fallbacks
-
-function AudioHost(){}
-
-
-
-AudioHost.prototype.init = function(success, fail, resultType) {
-
-    cordovaRef.exec(success, fail, "AudioHost", "init", [resultType]);
-
-}
-
-
-
-
-AudioHost.prototype.callNativeFunction = function(success, fail, resultType) {
-
-    cordovaRef.exec(success, fail, "AudioHost", "nativeFunction", [resultType]);
-
-}
-
-
-AudioHost.prototype.nativePluginResultHandler = function( result ) { console.log(success); }
-
-
-AudioHost.prototype.nativePluginErrorHandler = function( error ) { console.log(error); }
-
-
-
-AudioHost.install = function()
-{
-    if ( !window.plugins ) {
-        window.plugins = {};
-    }
-    if ( !window.plugins.AudioHost ) {
-        window.plugins.AudioHost = new AudioHost();
-    }
-}
-
-if (cordovaRef && cordovaRef.addConstructor) {
-    cordovaRef.addConstructor(AudioHost.install);
-} else {
-    console.log("AudioHost Cordova Plugin could not be installed.");
-    return null;
-}
-
-
-})();
+ 
+ var cordovaRef = window.PhoneGap || window.Cordova || window.cordova; // old to new fallbacks
+ 
+ function AudioHost(){}
+ 
+ 
+ 
+ AudioHost.prototype.init = function(success, fail, resultType) {
+ 
+ cordovaRef.exec(success, fail, "AudioHost", "init", [resultType]);
+ 
+ }
+ 
+ 
+ 
+ 
+ AudioHost.prototype.callNativeFunction = function(success, fail, resultType) {
+ 
+ cordovaRef.exec(success, fail, "AudioHost", "nativeFunction", [resultType]);
+ 
+ }
+ 
+ 
+ AudioHost.prototype.nativePluginResultHandler = function( result ) { console.log(success); }
+ 
+ 
+ AudioHost.prototype.nativePluginErrorHandler = function( error ) { console.log(error); }
+ 
+ 
+ 
+ AudioHost.install = function()
+ {
+ if ( !window.plugins ) {
+ window.plugins = {};
+ }
+ if ( !window.plugins.AudioHost ) {
+ window.plugins.AudioHost = new AudioHost();
+ }
+ }
+ 
+ if (cordovaRef && cordovaRef.addConstructor) {
+ cordovaRef.addConstructor(AudioHost.install);
+ } else {
+ console.log("AudioHost Cordova Plugin could not be installed.");
+ return null;
+ }
+ 
+ 
+ })();
 
 
 /*
-var AudioHost = {
-    
-    callNativeFunction: function (success, fail, resultType) {
-        return cordova.exec(success, fail, "AudioHost", "nativeFunction", [resultType]);
-    }
-}
-*/
+ var AudioHost = {
+ 
+ callNativeFunction: function (success, fail, resultType) {
+ return cordova.exec(success, fail, "AudioHost", "nativeFunction", [resultType]);
+ }
+ }
+ */
 
 
 
