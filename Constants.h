@@ -32,8 +32,11 @@
 #endif
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-#define  kXOrientationAdjust  80
-#define  kYOrientationAdjust  80
+#define  kXOrientationAdjustiPad  0
+#define  kYOrientationAdjustiPad  0
+
+#define  kXOrientationAdjustiPhone  0
+#define  kYOrientationAdjustiPhone  0
 
 #import <Foundation/Foundation.h>
 
