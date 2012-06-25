@@ -32,6 +32,13 @@
 #endif
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-#define  kXOrientationAdjust  0
-#define  kYOrientationAdjust  100
+#define  kXOrientationAdjust  80
+#define  kYOrientationAdjust  80
 
+#import <Foundation/Foundation.h>
+
+@interface Constants : NSObject {}
+
+extern NSString * const kConstant;
+
+@end
