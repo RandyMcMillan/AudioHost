@@ -36,6 +36,11 @@
 #define  kXOrientationAdjustiPhone  0
 #define  kYOrientationAdjustiPhone  0
 
+#define FILE_COUNT  36
+#define KEY_COUNT 36
+
+
+
 #import <Foundation/Foundation.h>
 
 @interface Constants : NSObject {}

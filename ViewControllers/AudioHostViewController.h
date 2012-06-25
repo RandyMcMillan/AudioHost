@@ -35,7 +35,10 @@
 #import <UIKit/UIKit.h>
 #import "MixerHostAudio.h"
 
-#define KEY_COUNT 6
+#import "Constants.h"
+
+
+//#define KEY_COUNT 6 //Now in Constants.h
 
 @interface AudioHostViewController : UIViewController {
     int                 lastKeyIndex;

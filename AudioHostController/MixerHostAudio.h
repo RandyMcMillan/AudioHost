@@ -5,11 +5,12 @@ Abstract: Audio object: Handles all audio tasks for the application.
 
 */
 
+#import "Constants.h"
 
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 
-#define FILE_COUNT  6
+//#define FILE_COUNT  6 Now in Constants.h
 #define BUS_COUNT   18  //Reduce this to low number to see how available busses affects playing multiple notes simultaneously.
 
 // Data structure that defines a single audio file, related to a given tone

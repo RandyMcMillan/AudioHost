@@ -35,9 +35,12 @@
 #import <UIKit/UIKit.h>
 #import "MixerHostAudio.h"
 
-#define KEY_COUNT 6
+#import "Constants.h"
 
-@interface AudioHostViewController1 : UIViewController {
+
+//#define KEY_COUNT 6 //Now in Constants.h
+
+@interface AudioHostViewController5 : UIViewController {
     int                 lastKeyIndex;
     CGRect              keyRects[KEY_COUNT];
     IBOutlet UIButton* doneButton;
