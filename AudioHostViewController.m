@@ -55,7 +55,7 @@
     NSLog(@" ________________orientation = %i",orientation);
     
     
-    if (orientation > 3) {
+    if (orientation > 2) {
         NSLog(@"UIDeviceOrientationLandscapeLeft!");
         
         //define the "key" xylophone note rectangles
