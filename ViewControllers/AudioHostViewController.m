@@ -61,12 +61,12 @@
 
     [self removeLabels:self.view];
 
-    keyRects[0] = CGRectZero;
-    keyRects[1] = CGRectZero;
-    keyRects[2] = CGRectZero;
-    keyRects[3] = CGRectZero;
-    keyRects[4] = CGRectZero;
-    keyRects[5] = CGRectZero;
+    keyRects[30] = CGRectZero;
+    keyRects[31] = CGRectZero;
+    keyRects[32] = CGRectZero;
+    keyRects[33] = CGRectZero;
+    keyRects[34] = CGRectZero;
+    keyRects[35] = CGRectZero;
 
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
 
@@ -353,6 +353,19 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+///When UIWebView bounces this disables the subtle gradient
+- (void) viewManagement:(UIView*)theView
+{
+    for (UIView * subview in theView.subviews)
+    {
+        if ([subview isKindOfClass:[UIImage class]])
+            subview.hidden = YES;
+        
+        [self removeLabels:subview];
+    }
+}
+
+
 
 -(IBAction) onDoneButtonPress:(id)sender {
 
@@ -363,6 +376,8 @@
     } else {
         [[self parentViewController] dismissModalViewControllerAnimated:YES];
     }
+    
+    [self viewManagement:self.view];
 
 }
 

@@ -80,80 +80,83 @@
     }
  
     
-    AudioHostViewController *audioHostView = [AudioHostViewController new];
-    audioHostView.view.bounds = mvcAudioHost_.view.bounds;
-    audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-    audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
-    mvcAudioHost_.view.autoresizesSubviews = YES;
-    [audioHostView drawKeyRects];//prime dimensions for first draw
-    [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
+    //AudioHostViewController *audioHostView = [AudioHostViewController new];
+    //audioHostView.view.bounds = mvcAudioHost_.view.bounds;
+    //audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
+    //audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
+    //mvcAudioHost_.view.autoresizesSubviews = YES;
+    //[audioHostView drawKeyRects];//prime dimensions for first draw
+    //[mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
 
-    NSString *selectedView = [arguments objectAtIndex:0];
-    NSLog(@"%@",selectedView);
+    
+    
+    NSLog(@"%@",[arguments objectAtIndex:1]);
+    NSString *selectedView = [arguments objectAtIndex:1];
+    NSLog(@"\n\n\n\n\n\n\n\n\n\n\nselectedView = %@ \n\n\n\n\n\n\n\n\n\n\n\n\n",selectedView);
    // CDVPluginResult *result;
     
     if ( [selectedView isEqualToString:@"0"] ) {
         
-        AudioHostViewController0 *audioHostView = [AudioHostViewController0 new];
-        audioHostView.view.bounds = mvcAudioHost_.view.bounds;
-        audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        AudioHostViewController0 *audioHostView0 = [AudioHostViewController0 new];
+        audioHostView0.view.bounds = mvcAudioHost_.view.bounds;
+        audioHostView0.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
+        audioHostView0.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
-        [audioHostView drawKeyRects];//prime dimensions for first draw
-        [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
+        [audioHostView0 drawKeyRects];//prime dimensions for first draw
+        [mvcAudioHost_ presentModalViewController:audioHostView0 animated:YES];
     
     }
     else if ( [selectedView isEqualToString:@"1"] ) {
     
-        AudioHostViewController1 *audioHostView = [AudioHostViewController1 new];
-        audioHostView.view.bounds = mvcAudioHost_.view.bounds;
-        audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        AudioHostViewController1 *audioHostView1 = [AudioHostViewController1 new];
+        audioHostView1.view.bounds = mvcAudioHost_.view.bounds;
+        audioHostView1.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
+        audioHostView1.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
-        [audioHostView drawKeyRects];//prime dimensions for first draw
-        [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
+        [audioHostView1 drawKeyRects];//prime dimensions for first draw
+        [mvcAudioHost_ presentModalViewController:audioHostView1 animated:YES];
     
     }
     else if ( [selectedView isEqualToString:@"2"] ) {
     
-        AudioHostViewController2 *audioHostView = [AudioHostViewController2 new];
-        audioHostView.view.bounds = mvcAudioHost_.view.bounds;
-        audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        AudioHostViewController2 *audioHostView2 = [AudioHostViewController2 new];
+        audioHostView2.view.bounds = mvcAudioHost_.view.bounds;
+        audioHostView2.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
+        audioHostView2.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
-        [audioHostView drawKeyRects];//prime dimensions for first draw
-        [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
+        [audioHostView2 drawKeyRects];//prime dimensions for first draw
+        [mvcAudioHost_ presentModalViewController:audioHostView2 animated:YES];
     
     }
     else if ( [selectedView isEqualToString:@"3"] ) {
     
-        AudioHostViewController3 *audioHostView = [AudioHostViewController3 new];
-        audioHostView.view.bounds = mvcAudioHost_.view.bounds;
-        audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        AudioHostViewController3 *audioHostView3 = [AudioHostViewController3 new];
+        audioHostView3.view.bounds = mvcAudioHost_.view.bounds;
+        audioHostView3.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
+        audioHostView3.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
-        [audioHostView drawKeyRects];//prime dimensions for first draw
-        [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
+        [audioHostView3 drawKeyRects];//prime dimensions for first draw
+        [mvcAudioHost_ presentModalViewController:audioHostView3 animated:YES];
     }
     else if ( [selectedView isEqualToString:@"4"] ) {
     
-        AudioHostViewController4 *audioHostView = [AudioHostViewController4 new];
-        audioHostView.view.bounds = mvcAudioHost_.view.bounds;
-        audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        AudioHostViewController4 *audioHostView4 = [AudioHostViewController4 new];
+        audioHostView4.view.bounds = mvcAudioHost_.view.bounds;
+        audioHostView4.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
+        audioHostView4.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
-        [audioHostView drawKeyRects];//prime dimensions for first draw
-        [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
+        [audioHostView4 drawKeyRects];//prime dimensions for first draw
+        [mvcAudioHost_ presentModalViewController:audioHostView4 animated:YES];
     }
     else if ( [selectedView isEqualToString:@"5"] ) {
     
-        AudioHostViewController5 *audioHostView = [AudioHostViewController5 new];
-        audioHostView.view.bounds = mvcAudioHost_.view.bounds;
-        audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        AudioHostViewController5 *audioHostView5 = [AudioHostViewController5 new];
+        audioHostView5.view.bounds = mvcAudioHost_.view.bounds;
+        audioHostView5.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
+        audioHostView5.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
-        [audioHostView drawKeyRects];//prime dimensions for first draw
-        [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
+        [audioHostView5 drawKeyRects];//prime dimensions for first draw
+        [mvcAudioHost_ presentModalViewController:audioHostView5 animated:YES];
     }
     else {
         NSLog(@"\n ***** All else failed! AudioHost.m Line: 159 ***** \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ***** All else failed! AudioHost.m Line: 159 ***** \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ***** All else failed! AudioHost.m Line: 159 ***** "); 
