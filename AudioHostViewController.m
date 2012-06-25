@@ -257,11 +257,13 @@
 
 
 #if TARGET_IPHONE_SIMULATOR
-    //For your convience in configuring keyRects 
+    
+    //For your convience in configuring keyRects. Pink Transparencies only displayed in Simulator 
     
     UILabel *label0 = [ [UILabel alloc ] initWithFrame:keyRects[0] ];
+    label0.numberOfLines = 3;
     label0.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
-    label0.text = [NSString stringWithFormat: @"keyRect[0]"];
+    label0.text = [NSString stringWithFormat: @"keyRect[0]\nOnly displayed in Simulator"];
     
     UILabel *label1 = [ [UILabel alloc ] initWithFrame:keyRects[1] ];
     label1.backgroundColor = [UIColor colorWithRed:1.000 green:0.820 blue:0.839 alpha:0.500];
