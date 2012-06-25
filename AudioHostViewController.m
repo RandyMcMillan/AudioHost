@@ -6,6 +6,9 @@
 //  Copyright 2011 DOCKMARKET LLC. All rights reserved.
 //
 
+
+#import "Cordova/CDVViewController.h"
+
 #import "AudioHostViewController.h"
 #import "Constants.h"
 
@@ -38,10 +41,9 @@
 
 
 - (void)drawKeyRects {
-    
+
     [self removeLabels:self.view];
     
-
     keyRects[0] = CGRectZero;
     keyRects[1] = CGRectZero;
     keyRects[2] = CGRectZero;
@@ -235,6 +237,8 @@
 
 - (void)viewDidLoad {
     
+    self.view.bounds = [UIScreen mainScreen].bounds;
+    
     [self drawKeyRects];
     
     
@@ -354,7 +358,6 @@
         
     }
     
-   /* 
     //define the "key" xylophone note rectangles
     keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0 + xOrientationAdjust,//derive x
                              [self view].bounds.size.width * 0.0 + yOrientationAdjust,//derive y
@@ -468,12 +471,11 @@
 
 
 - (void) didRotate:(NSNotification *)notification {
-    //self.view = nil;
-    //[self viewDidLoad];
+
     [self drawKeyRects];
     
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-    
+ 
     if (orientation == UIDeviceOrientationLandscapeLeft) {
         NSLog(@"UIDeviceOrientationLandscapeLeft!");
         //your code here

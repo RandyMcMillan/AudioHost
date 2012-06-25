@@ -6,6 +6,12 @@
 //  Copyright 2011 DOCKMARKET LLC. All rights reserved.
 //
 
+
+#ifdef CORDOVA_FRAMEWORK
+#import <Cordova/CDVPlugin.h>
+#else
+#import "Cordova/CDVPlugin.h"
+#endif
 #import <UIKit/UIKit.h>
 #import "MixerHostAudio.h"
 

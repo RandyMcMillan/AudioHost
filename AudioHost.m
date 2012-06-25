@@ -76,9 +76,17 @@
     CDVViewController* mvcAudioHost_ = (CDVViewController*)[ super viewController ];
     AudioHostViewController *audioHostView = [AudioHostViewController new];
     
-    
-    //mvcAudioHost_.modalPresentationStyle = UIModalPresentationFullScreen;
+    if (IS_IPAD) {
+
     mvcAudioHost_.modalPresentationStyle = UIModalPresentationPageSheet;
+        
+    } else {
+        //
+    mvcAudioHost_.modalPresentationStyle = UIModalPresentationFullScreen;
+ 
+    }
+
+        
     audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
     audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
     [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
