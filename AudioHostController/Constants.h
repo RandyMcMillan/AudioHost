@@ -29,16 +29,33 @@
 #define AudioHostDevProject_Constants_h
 #endif
 
+#ifndef IS_IPAD
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#endif
+
+#ifndef kXOrientationAdjustiPad
 #define  kXOrientationAdjustiPad  0
+#endif
+
+#ifndef  kYOrientationAdjustiPad  
 #define  kYOrientationAdjustiPad  0
+#endif
 
+#ifndef kXOrientationAdjustiPhone
 #define  kXOrientationAdjustiPhone  0
+#endif
+
+#ifndef kYOrientationAdjustiPhone
 #define  kYOrientationAdjustiPhone  0
+#endif
 
-#define FILE_COUNT  36
-#define KEY_COUNT 36
+#ifndef FILE_COUNT
+#define FILE_COUNT  18
+#endif
 
+#ifndef KEY_COUNT
+#define KEY_COUNT 18
+#endif
 
 
 #import <Foundation/Foundation.h>

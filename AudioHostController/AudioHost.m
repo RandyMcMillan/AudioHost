@@ -23,9 +23,9 @@
 //  Copyright OpenOSX.org 2012. All rights reserved.
 //
 
-#import <Cordova/CDVAvailability.h>
+//#import <Cordova/CDVAvailability.h>
 #import <Cordova/CDVViewController.h>
-#import <Cordova/CDVDebug.h>
+//#import <Cordova/CDVDebug.h>
 #import "Constants.h"
 #import "AudioHost.h"
 #import "AudioHost_JS.h"
@@ -40,37 +40,12 @@
 
 @implementation AudioHost
 
-- (void) init:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {
-
-    NSString *callbackId = [arguments pop];
-    //NSString *objectAtIndex0 = [arguments objectAtIndex:0];
-
-    CDVViewController* mvcAudioHost_ = (CDVViewController*)[ super viewController ];
-    NSString* jsString = kAudioHost_INIT;
-    [mvcAudioHost_.webView stringByEvaluatingJavaScriptFromString:jsString];
-
-    NSString *resultType = [arguments objectAtIndex:0];
-    CDVPluginResult *result;
-
-    if ( [resultType isEqualToString:@"success"] ) {
-        result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString: @"Success! const kAudioHost_ALERT was evaluated by webview and created alert!"];
-
-        NSLog(@"callbackId = '%@'",callbackId);
-        [self writeJavascript:[result toSuccessCallbackString:callbackId]];
-    }
-    else
-    {
-        result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString: @"resultType = 'error'! const kAudioHost_ALERT was evaluated by webview and created alert!"];
-
-        NSLog(@"callbackId = '%@'",callbackId);
-        [self writeJavascript:[result toErrorCallbackString:callbackId]];
-    }
-}
+- (void) init:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {}
 
 - (void) loadHostView:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {
     //NSString *callbackId = [arguments pop];
-    NSString *objectAtIndex0 = [arguments objectAtIndex:0];
-    NSLog(@"objectAtIndex0 = '%@'",objectAtIndex0);
+    //NSString *objectAtIndex0 = [arguments objectAtIndex:0];
+    //NSLog(@"objectAtIndex0 = '%@'",objectAtIndex0);
  
     CDVViewController* mvcAudioHost_ = (CDVViewController*)[ super viewController ];
     if (IS_IPAD) {
@@ -79,17 +54,6 @@
         mvcAudioHost_.modalPresentationStyle = UIModalPresentationFullScreen;
     }
  
-    
-    //AudioHostViewController *audioHostView = [AudioHostViewController new];
-    //audioHostView.view.bounds = mvcAudioHost_.view.bounds;
-    //audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-    //audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
-    //mvcAudioHost_.view.autoresizesSubviews = YES;
-    //[audioHostView drawKeyRects];//prime dimensions for first draw
-    //[mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
-
-    
-    
     NSLog(@"%@",[arguments objectAtIndex:1]);
     NSString *selectedView = [arguments objectAtIndex:1];
     NSLog(@"\n\n\n\n\n\n\n\n\n\n\nselectedView = %@ \n\n\n\n\n\n\n\n\n\n\n\n\n",selectedView);
@@ -171,74 +135,21 @@
     }
 
 
-
-
-}
+};
 
 
 - (void) nativeFunction:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {
 
     NSLog(@"Hello, this is a native function called from AudioHost!");
 
-    //get the callback id
-    NSString *callbackId = [arguments pop];
-    NSString *objectAtIndex0 = [arguments objectAtIndex:0];
-    NSLog(@"objectAtIndex0 = '%@'",objectAtIndex0);
+   }
 
-/*
-    NSString *objectAtIndex1 = [arguments objectAtIndex:1];
-    NSLog(@"objectAtIndex1 = '%@'",objectAtIndex1);
-*/
-    NSLog(@"kAudioHost_ALERT = %@",kAudioHost_ALERT);
 
-    CDVViewController* mvcAudioHost_ = (CDVViewController*)[ super viewController ];
-    AudioHostViewController *audioHostView = [AudioHostViewController new];
-    audioHostView.view.bounds = mvcAudioHost_.view.bounds;
+- (void) dealloc {
 
-    if (IS_IPAD) {
-
-    mvcAudioHost_.modalPresentationStyle = UIModalPresentationPageSheet;
-
-    } else {
-//
-    mvcAudioHost_.modalPresentationStyle = UIModalPresentationFullScreen;
- 
-    }
-
-    audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-    audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
-    mvcAudioHost_.view.autoresizesSubviews = YES;
-
-    [audioHostView drawKeyRects];//prime dimensions for first draw
-
-    [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];
-
-    NSLog(@"mvcAudioHost_ = %@",mvcAudioHost_);
-    NSLog(@"mvcAudioHost_.view = %@",mvcAudioHost_.view);
-    NSLog(@"mvcAudioHost_.webView = %@",mvcAudioHost_.webView);
-
-//    mvcAudioHost_.webView.alpha = 0.5;
-
-    NSString* jsString = kAudioHost_ALERT;
-    [mvcAudioHost_.webView stringByEvaluatingJavaScriptFromString:jsString];
-
-    NSString *resultType = [arguments objectAtIndex:0];
-    NSLog(@"%@",resultType);
-    CDVPluginResult *result;
-
-    if ( [resultType isEqualToString:@"success"] ) {
-        result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString: @"Success! const kAudioHost_ALERT was evaluated by webview and created alert!"];
-
-        NSLog(@"callbackId = '%@'",callbackId);
-        [self writeJavascript:[result toSuccessCallbackString:callbackId]];
-    }
-    else
-    {
-        result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString: @"resultType = 'error'! const kAudioHost_ALERT was evaluated by webview and created alert!"];
-
-        NSLog(@"callbackId = '%@'",callbackId);
-        [self writeJavascript:[result toErrorCallbackString:callbackId]];
-    }
+    [self dealloc];
+	[super dealloc];
 }
+
 
 @end

@@ -28,7 +28,6 @@
 //
 
 
-#import "Cordova/CDVViewController.h"
 #import "AudioHostViewController4.h"
 #import "Constants.h"
 
@@ -291,7 +290,12 @@
 
 }
 
-- (void)viewDidUnload { [super viewDidUnload]; }
+- (void)viewDidUnload {
+    [mixerHost stopAUGraph];
+    [mixerHost dealloc];    
+    [super viewDidUnload];
+    
+}
 
 // Handle a change in the mixer output gain slider.
 - (IBAction) mixerOutputGainChanged: (UISlider *) sender {
@@ -348,27 +352,43 @@
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
+    [self viewManagement:self.view];
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
 }
 
+///When UIWebView bounces this disables the subtle gradient
+- (void) viewManagement:(UIView*)theView
+{
+    for (UIView * subview in theView.subviews)
+    {
+        if ([subview isKindOfClass:[UIImage class]])
+            subview.hidden = YES;
+        
+        [self removeLabels:subview];
+    }
+}
+
+
 
 -(IBAction) onDoneButtonPress:(id)sender {
-
-    //NSLog(@"Done Button Press");
-
+    
+    NSLog(@"Done Button Press");
+    
     if ([self respondsToSelector:@selector(presentingViewController)]) { 
         [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
     } else {
         [[self parentViewController] dismissModalViewControllerAnimated:YES];
     }
-
+    
+    [self viewManagement:self.view];
+    
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-
+    
     BOOL autoRotate = [self.supportedOrientations count] > 1; // autorotate if only more than 1 orientation supported
     if (autoRotate)
     {
@@ -377,9 +397,9 @@
             return YES;
         }
     }
-
+    
     return NO;
-
+    
 }
 
 @end
