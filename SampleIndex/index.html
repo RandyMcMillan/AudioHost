@@ -69,6 +69,13 @@
                     
                 }
                 
+                function overLay (returnSuccess){
+                    
+                    window.plugins.AudioHost.callNativeFunction(nativePluginResultHandler,nativePluginErrorHandler,"0");
+                    
+                }
+                
+                
                 
                 function nativePluginResultHandler (result) {}
                 function nativePluginErrorHandler (error) {}
@@ -87,6 +94,8 @@
             <button onclick="buttonFive('success');">AudioiHostVC5!</button><br>
             <br>
             <button onclick="allElseFail('success');">All Else Fail!!</button>
+            <button onclick="overLay('success');">Over Lay!</button>
+            
         </center>
     </body>
 </html>

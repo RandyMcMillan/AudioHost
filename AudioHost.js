@@ -17,13 +17,6 @@
  under the License.
  */
 
-//
-//
-//  Created by Randy McMillan on 6/24/12.
-//  Copyright OpenOSX.org 2012. All rights reserved.
-//
-
-
 (function() {
  
  var cordovaRef = window.PhoneGap || window.Cordova || window.cordova; // old to new fallbacks
@@ -44,6 +37,12 @@
  AudioHost.prototype.callNativeFunction = function(success, fail, resultType) {
  
  cordovaRef.exec(success, fail, "AudioHost", "nativeFunction", [resultType]);
+ 
+ }
+ 
+ AudioHost.prototype.callLoadHostView = function(success, fail, view) {
+ 
+ cordovaRef.exec(success, fail, "AudioHost", "loadHostView", [view]);
  
  }
  
@@ -74,4 +73,18 @@
  
  
  })();
+
+
+/*
+ var AudioHost = {
+ 
+ callNativeFunction: function (success, fail, resultType) {
+ return cordova.exec(success, fail, "AudioHost", "nativeFunction", [resultType]);
+ }
+ }
+ */
+
+
+
+
 
