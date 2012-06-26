@@ -57,6 +57,10 @@
 #define KEY_COUNT 18
 #endif
 
+#ifndef BUS_COUNT
+#define BUS_COUNT   12  //Reduce this to low number to see how available busses affects playing multiple notes simultaneously.
+#endif
+
 
 #import <Foundation/Foundation.h>
 
