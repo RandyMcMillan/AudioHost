@@ -24,7 +24,7 @@ Plugin KeyValues AudioHost AudioHost<br><br>
 ![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPhoneLandscape.png)
 
 ###Multiple view support. Each view can be mapped individually.
-###Configured for 36 individual audio files (6 in each view but can be modified)
+###Configured for multiple audio files (6 in each view but can be modified)
         keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0,//derive xi
                                      [self view].bounds.size.height * 0.0,//derive y
                                      [self view].bounds.size.width * 1.0,//span across entire screen
