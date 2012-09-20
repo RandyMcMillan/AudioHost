@@ -58,7 +58,7 @@
 #endif
 
 #ifndef BUS_COUNT
-#define BUS_COUNT   12  //Reduce this to low number to see how available busses affects playing multiple notes simultaneously.
+#define BUS_COUNT   36  //Reduce this to low number to see how available busses affects playing multiple notes simultaneously.
 #endif
 
 
