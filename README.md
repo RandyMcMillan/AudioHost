@@ -8,6 +8,7 @@
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/IVKyomoNUSE" frameborder="0" allowfullscreen></iframe>
 
+[http://www.youtube.com/watch?v=IVKyomoNUSE](http://www.youtube.com/watch?v=IVKyomoNUSE)
 
 Plugin KeyValues AudioHost AudioHost<br><br>
 ![image](https://github.com/RandyMcMillan/AudioHost/raw/master/keyValues.png)
