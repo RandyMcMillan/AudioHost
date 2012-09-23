@@ -18,9 +18,9 @@ Plugin KeyValues AudioHost AudioHost<br><br>
 <br><br><br>
 
 ###Cordova WebView.
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPadCDVLandscape.png)
+![image](https://github.com/RandyMcMillan/AudioHost/blob/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022%2C%202012%209.35.41%20PM.png)
 ###Display a view that has hotspots mapped to audio files.
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPadLandscape.png)
+![image](https://github.com/RandyMcMillan/AudioHost/blob/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022%2C%202012%209.35.43%20PM.png)
 ###Cordova WebView.
 ![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPadCDVPortrait.png)
 ###Display a view that has hotspots mapped to audio files.
