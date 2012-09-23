@@ -18,13 +18,13 @@ Plugin KeyValues AudioHost AudioHost<br><br>
 <br><br><br>
 
 ###Cordova WebView.
-![image](https://github.com/RandyMcMillan/AudioHost/blob/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022%2C%202012%209.35.41%20PM.png)
+![image](https://raw.github.com/RandyMcMillan/AudioHost/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022,%202012%209.35.41%20PM.png)
 ###Display a view that has hotspots mapped to audio files.
-![image](https://github.com/RandyMcMillan/AudioHost/blob/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022%2C%202012%209.35.43%20PM.png)
+![image](https://raw.github.com/RandyMcMillan/AudioHost/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022,%202012%209.35.43%20PM.png)
 ###Cordova WebView.
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPadCDVPortrait.png)
+![image](https://raw.github.com/RandyMcMillan/AudioHost/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022,%202012%209.35.48%20PM.png)
 ###Display a view that has hotspots mapped to audio files.
-![image](https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPadPortrait.png)
+![image](https://raw.github.com/RandyMcMillan/AudioHost/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022,%202012%209.35.50%20PM.png)
 
 ###iPhone and iPad support
 ####Hotspots resize on orientation changes
