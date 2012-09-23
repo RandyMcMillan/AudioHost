@@ -11,8 +11,7 @@
 [http://www.youtube.com/watch?v=IVKyomoNUSE](http://www.youtube.com/watch?v=IVKyomoNUSE)
 
 This is a basic version of the code being used in the YouTube video.
-Knowledge of ObjC is needed to get the most out of this plugin. 
-x
+Knowledge of ObjC is needed to get the most out of this plugin.
 
 Plugin KeyValues AudioHost AudioHost<br><br>
 ![image](https://github.com/RandyMcMillan/AudioHost/raw/master/keyValues.png)
