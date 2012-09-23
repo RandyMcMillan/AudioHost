@@ -35,8 +35,11 @@
 #import <UIKit/UIKit.h>
 #import "MixerHostAudio.h"
 
+#import "GradientButton.h"
+#import "GradientToolBar.h"
 #import "Constants.h"
-
+#import "ExampleView.h"
+#import "UIImage+PDF.h"
 
 //#define KEY_COUNT 6 //Now in Constants.h
 
@@ -44,6 +47,11 @@
     int                 lastKeyIndex;
     CGRect              keyRects[KEY_COUNT];
     IBOutlet UIButton* doneButton;
+    
+    IBOutlet ExampleView        *imageView;
+    IBOutlet GradientToolBar    *toolBar;
+    IBOutlet GradientButton     *closeButton;
+
 
 }
 

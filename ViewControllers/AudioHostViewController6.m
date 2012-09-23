@@ -264,6 +264,7 @@
 }
 
 - (void)viewDidLoad {
+    [mixerHost stopAUGraph];
 
     [self drawKeyRects];
 

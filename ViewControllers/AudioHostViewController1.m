@@ -260,7 +260,8 @@
 }
 
 - (void)viewDidLoad {
-    
+    [mixerHost stopAUGraph];
+ 
     [self drawKeyRects];
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
