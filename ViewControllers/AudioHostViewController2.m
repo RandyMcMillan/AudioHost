@@ -261,6 +261,14 @@
 
 - (void)viewDidLoad {
     [mixerHost stopAUGraph];
+    ExampleView *welcomeIV = [[ExampleView alloc] initWithImage:
+                              [UIImage originalSizeImageWithPDFNamed:@"CDVBot.pdf"]];
+    
+    imageView.image = welcomeIV.image;
+    [welcomeIV release];
+    
+    [imageView useWelcomeStyle];///bypass here for imageView issues on welcom screen iPhone
+    
 
     [self drawKeyRects];
 
