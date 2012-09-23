@@ -46,7 +46,7 @@
 @interface AudioHostViewController1 : UIViewController {
     int                 lastKeyIndex;
     CGRect              keyRects[KEY_COUNT];
-    IBOutlet UIButton* doneButton;
+    IBOutlet GradientButton *doneButton;
     IBOutlet ExampleView        *imageView;
     IBOutlet GradientToolBar    *toolBar;
     IBOutlet GradientButton     *closeButton;

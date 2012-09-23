@@ -270,7 +270,9 @@
     [welcomeIV release];
     
     [imageView useWelcomeStyle];///bypass here for imageView issues on welcom screen iPhone
-    
+    [toolBar useTBStyle];
+    [doneButton useDoneButtonStyle];
+ 
 
     [self drawKeyRects];
     
