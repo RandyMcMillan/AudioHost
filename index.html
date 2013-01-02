@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Audiohost : AudioHost Cordova (iOS) Plugin Map hotspots to trigger audio events in a modal view. " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Audiohost</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/RandyMcMillan/AudioHost">View on GitHub</a>
+
+          <h1 id="project_title">Audiohost</h1>
+          <h2 id="project_tagline">AudioHost Cordova (iOS) Plugin Map hotspots to trigger audio events in a modal view. </h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/RandyMcMillan/AudioHost/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/RandyMcMillan/AudioHost/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Rethinking the Hybrid App Paradigm<br>
+</h1>
+
+<h2>AudioHost Cordova (iOS) plugin</h2>
+
+<h3>Map hotspots to trigger audio events.</h3>
+
+
+
+
+
+<p><a href="http://www.youtube.com/watch?v=Ur5b5Fm7YGo">http://www.youtube.com/watch?v=Ur5b5Fm7YGo</a></p>
+
+<p><a href="http://www.youtube.com/watch?v=IVKyomoNUSE">http://www.youtube.com/watch?v=IVKyomoNUSE</a></p>
+
+<p>This is a basic version of the code being used in the YouTube video.
+Knowledge of ObjC is needed to get the most out of this plugin.</p>
+
+<p>Plugin KeyValues AudioHost AudioHost<br><br><img src="https://github.com/RandyMcMillan/AudioHost/raw/master/keyValues.png" alt="image"><br><br><br></p>
+
+<h3>Cordova WebView.</h3>
+
+<p><img src="https://raw.github.com/RandyMcMillan/AudioHost/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022,%202012%209.35.41%20PM.png" alt="image"></p>
+
+<h3>Display a view that has hotspots mapped to audio files.</h3>
+
+<p><img src="https://raw.github.com/RandyMcMillan/AudioHost/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022,%202012%209.35.43%20PM.png" alt="image"></p>
+
+<h3>Cordova WebView.</h3>
+
+<p><img src="https://raw.github.com/RandyMcMillan/AudioHost/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022,%202012%209.35.48%20PM.png" alt="image"></p>
+
+<h3>Display a view that has hotspots mapped to audio files.</h3>
+
+<p><img src="https://raw.github.com/RandyMcMillan/AudioHost/master/ScreenShots/iOS%20Simulator%20Screen%20shot%20Sep%2022,%202012%209.35.50%20PM.png" alt="image"></p>
+
+<h3>iPhone and iPad support</h3>
+
+<h4>Hotspots resize on orientation changes</h4>
+
+<p><img src="https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPhonePortrait.png" alt="image"><img src="https://github.com/RandyMcMillan/AudioHost/raw/master/ScreenShots/iPhoneLandscape.png" alt="image"></p>
+
+<h3>Multiple view support. Each view can be mapped individually.</h3>
+
+<h3>Configured for multiple audio files (6 in each view but can be modified)</h3>
+
+<pre><code>    keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0,//derive xi
+                                 [self view].bounds.size.height * 0.0,//derive y
+                                 [self view].bounds.size.width * 1.0,//span across entire screen
+                                 [self view].bounds.size.height * 0.16// 1/6th width of screen
+                                 );
+</code></pre>
+
+<p>Reference:</p>
+
+<p><a href="https://github.com/RandyMcMillan/CBHideToolBar">https://github.com/RandyMcMillan/CBHideToolBar</a></p>
+
+<p><a href="https://github.com/RandyMcMillan/ModalCleaverSplitView3">https://github.com/RandyMcMillan/ModalCleaverSplitView3</a></p>
+
+<p><a href="https://github.com/RandyMcMillan/ModalCleaverSplitView2">https://github.com/RandyMcMillan/ModalCleaverSplitView2</a></p>
+
+<p><a href="https://github.com/RandyMcMillan/ModalCleaverSplitView">https://github.com/RandyMcMillan/ModalCleaverSplitView</a></p>
+
+<p><a href="https://github.com/RandyMcMillan/ModalCleaverView4">https://github.com/RandyMcMillan/ModalCleaverView4
+</a></p>
+
+<p><a href="https://github.com/RandyMcMillan/ModalCleaverView3">https://github.com/RandyMcMillan/ModalCleaverView3
+</a></p>
+
+<p><a href="https://github.com/RandyMcMillan/ModalCleaverView2">https://github.com/RandyMcMillan/ModalCleaverView2
+</a></p>
+
+<p><a href="https://github.com/RandyMcMillan/ModalCleaverView">https://github.com/RandyMcMillan/ModalCleaverView
+</a></p>
+
+<p><a href="https://github.com/RandyMcMillan/WikiCleaverView">https://github.com/RandyMcMillan/WikiCleaverView
+</a></p>
+
+<p><a href="https://github.com/RandyMcMillan/Cleaver-RSSReader">https://github.com/RandyMcMillan/Cleaver-RSSReader
+</a></p>
+
+<p><br></p>
+
+<p>License
+The MIT License (MIT) Copyright (c) 2012 Randy McMillan &amp; Barry Ezell</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Audiohost maintained by <a href="https://github.com/RandyMcMillan">RandyMcMillan</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
