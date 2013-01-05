@@ -64,7 +64,7 @@
         AudioHostViewController0 *audioHostView0 = [AudioHostViewController0 new];
         audioHostView0.view.bounds = mvcAudioHost_.view.bounds;
         audioHostView0.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView0.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        //audioHostView0.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
         [audioHostView0 drawKeyRects];//prime dimensions for first draw
         [mvcAudioHost_ presentModalViewController:audioHostView0 animated:YES];
@@ -75,7 +75,7 @@
         AudioHostViewController1 *audioHostView1 = [AudioHostViewController1 new];
         audioHostView1.view.bounds = mvcAudioHost_.view.bounds;
         audioHostView1.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView1.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        //audioHostView1.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
         [audioHostView1 drawKeyRects];//prime dimensions for first draw
         [mvcAudioHost_ presentModalViewController:audioHostView1 animated:YES];
@@ -86,7 +86,7 @@
         AudioHostViewController2 *audioHostView2 = [AudioHostViewController2 new];
         audioHostView2.view.bounds = mvcAudioHost_.view.bounds;
         audioHostView2.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView2.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        //audioHostView2.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
         [audioHostView2 drawKeyRects];//prime dimensions for first draw
         [mvcAudioHost_ presentModalViewController:audioHostView2 animated:YES];
@@ -97,7 +97,7 @@
         AudioHostViewController3 *audioHostView3 = [AudioHostViewController3 new];
         audioHostView3.view.bounds = mvcAudioHost_.view.bounds;
         audioHostView3.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView3.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        //audioHostView3.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
         [audioHostView3 drawKeyRects];//prime dimensions for first draw
         [mvcAudioHost_ presentModalViewController:audioHostView3 animated:YES];
@@ -107,7 +107,7 @@
         AudioHostViewController4 *audioHostView4 = [AudioHostViewController4 new];
         audioHostView4.view.bounds = mvcAudioHost_.view.bounds;
         audioHostView4.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView4.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        //audioHostView4.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
         [audioHostView4 drawKeyRects];//prime dimensions for first draw
         [mvcAudioHost_ presentModalViewController:audioHostView4 animated:YES];
@@ -117,7 +117,7 @@
         AudioHostViewController5 *audioHostView5 = [AudioHostViewController5 new];
         audioHostView5.view.bounds = mvcAudioHost_.view.bounds;
         audioHostView5.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView5.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        //audioHostView5.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
         [audioHostView5 drawKeyRects];//prime dimensions for first draw
         [mvcAudioHost_ presentModalViewController:audioHostView5 animated:YES];
@@ -127,7 +127,7 @@
         AudioHostViewController *audioHostView = [AudioHostViewController new];
         audioHostView.view.bounds = mvcAudioHost_.view.bounds;
         audioHostView.modalPresentationStyle = mvcAudioHost_.modalPresentationStyle;
-        audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
+        //audioHostView.supportedOrientations = mvcAudioHost_.supportedOrientations;
         mvcAudioHost_.view.autoresizesSubviews = YES;
         [audioHostView drawKeyRects];//prime dimensions for first draw
         [mvcAudioHost_ presentModalViewController:audioHostView animated:YES];

@@ -1,20 +1,6 @@
-#<center>Rethinking the Hybrid App Paradigm</center><br>
-
-
-##AudioHost Cordova (iOS) plugin
+#AudioHost Cordova (iOS) plugin
 ###Map hotspots to trigger audio events.
 
-
-
-<iframe width="560" height="315" src="http://www.youtube.com/embed/Ur5b5Fm7YGo?list=UUab4r3lX0ODWMHKPW0YMsSg&amp;hl=en_US" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="http://www.youtube.com/embed/IVKyomoNUSE" frameborder="0" allowfullscreen></iframe>
-
-
-
-[http://www.youtube.com/watch?v=Ur5b5Fm7YGo](http://www.youtube.com/watch?v=Ur5b5Fm7YGo)
-
-[http://www.youtube.com/watch?v=IVKyomoNUSE](http://www.youtube.com/watch?v=IVKyomoNUSE)
 
 This is a basic version of the code being used in the YouTube video.
 Knowledge of ObjC is needed to get the most out of this plugin.
@@ -39,47 +25,13 @@ Plugin KeyValues AudioHost AudioHost<br><br>
 
 ###Multiple view support. Each view can be mapped individually.
 ###Configured for multiple audio files (6 in each view but can be modified)
+
+
         keyRects[0] = CGRectMake([self view].bounds.size.width * 0.0,//derive xi
                                      [self view].bounds.size.height * 0.0,//derive y
                                      [self view].bounds.size.width * 1.0,//span across entire screen
                                      [self view].bounds.size.height * 0.16// 1/6th width of screen
                                      );
-
-Reference:
-
-[https://github.com/RandyMcMillan/CBHideToolBar](https://github.com/RandyMcMillan/CBHideToolBar)
-
-[https://github.com/RandyMcMillan/ModalCleaverSplitView3](https://github.com/RandyMcMillan/ModalCleaverSplitView3)
-
-[https://github.com/RandyMcMillan/ModalCleaverSplitView2](https://github.com/RandyMcMillan/ModalCleaverSplitView2)
-
-[https://github.com/RandyMcMillan/ModalCleaverSplitView](https://github.com/RandyMcMillan/ModalCleaverSplitView)
-
-[https://github.com/RandyMcMillan/ModalCleaverView4
-](https://github.com/RandyMcMillan/ModalCleaverView4
-)
-
-[https://github.com/RandyMcMillan/ModalCleaverView3
-](https://github.com/RandyMcMillan/ModalCleaverView3
-)
-
-[https://github.com/RandyMcMillan/ModalCleaverView2
-](https://github.com/RandyMcMillan/ModalCleaverView2
-)
-
-[https://github.com/RandyMcMillan/ModalCleaverView
-](https://github.com/RandyMcMillan/ModalCleaverView
-)
-
-
-[https://github.com/RandyMcMillan/WikiCleaverView
-](https://github.com/RandyMcMillan/WikiCleaverView
-)
-
-[https://github.com/RandyMcMillan/Cleaver-RSSReader
-](https://github.com/RandyMcMillan/Cleaver-RSSReader
-)
-
 
 
 <br>
